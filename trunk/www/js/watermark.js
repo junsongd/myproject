@@ -111,7 +111,17 @@
 			img.onload = null;
 	
 			img.src = gcanvas.toDataURL();
-
+            
+            //Robin
+            var success = function(msg){
+              console.info(msg);
+            };
+              
+            var error = function(err){
+              console.error(err);
+            };
+            watermarker.saveImageToPhone(img.src,success,error);
+              
 		},
 		applyWatermarks = function(){
 			setTimeout(function(){
