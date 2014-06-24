@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyLocationViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *openPhoto;
 
 @end
