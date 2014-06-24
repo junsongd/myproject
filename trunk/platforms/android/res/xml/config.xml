@@ -4,6 +4,12 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
+    <feature name="ImagePicker">
+        <param name="android-package" value="com.synconset.ImagePicker" />
+    </feature>
+    <feature name="Canvas2ImagePlugin">
+        <param name="android-package" value="org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin" />
+    </feature>
     <name>watermaker</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
