@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1F9016D2-79F9-4C8E-BC9E-48BF980F317D</string>
+	<string>09E9A403-763B-425E-AE67-B54FA55CCBF0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ZYQAssetPickerControllerDemo</string>
+	<string>waterInterface</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</key>
+		<key>09BE6A29-C956-4685-B676-05DCBFB81C72</key>
 		<string>https://github.com/junsongd/myproject.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>leonXcode/ZYQAssetPickerControllerDemo/ZYQAssetPickerControllerDemo.xcodeproj/project.xcworkspace</string>
+	<string>waterInterface/waterInterface.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</key>
-		<string>../../../..</string>
+		<key>09BE6A29-C956-4685-B676-05DCBFB81C72</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/junsongd/myproject.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</string>
+	<string>09BE6A29-C956-4685-B676-05DCBFB81C72</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</string>
+			<string>09BE6A29-C956-4685-B676-05DCBFB81C72</string>
 			<key>IDESourceControlWCCName</key>
-			<string>waterMakerIOS</string>
+			<string>myproject</string>
 		</dict>
 	</array>
 </dict>
