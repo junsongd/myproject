@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>89D42853-7356-475E-97E3-1E2B853226CD</string>
+	<string>1F9016D2-79F9-4C8E-BC9E-48BF980F317D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ZYQAssetPickerControllerDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8A606363-E623-47A1-8E96-45EDC0DCD34E</key>
-		<string>https://github.com/heroims/ZYQAssetPickerController.git</string>
+		<key>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</key>
+		<string>https://github.com/junsongd/myproject.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ZYQAssetPickerControllerDemo/ZYQAssetPickerControllerDemo.xcodeproj/project.xcworkspace</string>
+	<string>leonXcode/ZYQAssetPickerControllerDemo/ZYQAssetPickerControllerDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8A606363-E623-47A1-8E96-45EDC0DCD34E</key>
-		<string>../../..</string>
+		<key>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/heroims/ZYQAssetPickerController.git</string>
+	<string>https://github.com/junsongd/myproject.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8A606363-E623-47A1-8E96-45EDC0DCD34E</string>
+	<string>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8A606363-E623-47A1-8E96-45EDC0DCD34E</string>
+			<string>6C15CD67-AE04-4B63-9FF2-6F357A89FBE3</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ZYQAssetPickerController</string>
+			<string>waterMakerIOS</string>
 		</dict>
 	</array>
 </dict>
