@@ -16,6 +16,10 @@
 
 @implementation ViewController
 
+@synthesize openPhotoButton;
+@synthesize photoPageControl;
+@synthesize photoScollerView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,5 +48,36 @@
     
     [self presentViewController:picker animated:YES completion:NULL];
 }
+
+#pragma mark - LeonAssetPickerController Delegate
+-(void)assetPickerController:(LeonAssetPickerController *)picker didFinishPickingAssets:(NSArray *)assets{
+    [photoScollerView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        photoScollerView.contentSize=CGSizeMake(assets.count*photoScollerView.frame.size.width, photoScollerView.frame.size.height);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            photoPageControl.numberOfPages=assets.count;
+        });
+        
+        for (int i=0; i<assets.count; i++) {
+            ALAsset *asset=assets[i];
+            UIImageView *imgview=[[UIImageView alloc] initWithFrame:CGRectMake(i*photoScollerView.frame.size.width, 0, photoScollerView.frame.size.width, photoScollerView.frame.size.height)];
+            imgview.contentMode=UIViewContentModeScaleAspectFill;
+            imgview.clipsToBounds=YES;
+            UIImage *tempImg=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [imgview setImage:tempImg];
+                [photoScollerView addSubview:imgview];
+            });
+        }
+    });
+}
+
+#pragma mark - UIScrollView Delegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    photoPageControl.currentPage=floor(scrollView.contentOffset.x/scrollView.frame.size.width);;
+}
+
+
 
 @end
