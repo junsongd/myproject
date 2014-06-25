@@ -10,5 +10,7 @@
 
 @interface MyLocationViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *openPhoto;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIScrollView *scollView;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "MyLocationAppDelegate.h"
 
-@implementation MyLocationAppDelegate
+@implementation MyLocationAppDelegate : NSObject  
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

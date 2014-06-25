@@ -8,6 +8,9 @@
 
 #import "MyLocationViewController.h"
 
+#import "LeonAssetPickerController.h"
+
+
 @interface MyLocationViewController ()
 
 @end
@@ -27,6 +30,27 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
+}
+- (IBAction)openPhotoClick:(id)sender {
+    leonAssetPickerController *picker = [[leonAssetPickerController alloc] init];
+    picker.maximumNumberOfSelection = 10;
+    picker.assetsFilter = [ALAssetsFilter allPhotos];
+    picker.showEmptyGroups=NO;
+    picker.delegate=self;
+    picker.selectionFilter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        if ([[(ALAsset*)evaluatedObject valueForProperty:ALAssetPropertyType] isEqual:ALAssetTypeVideo]) {
+            NSTimeInterval duration = [[(ALAsset*)evaluatedObject valueForProperty:ALAssetPropertyDuration] doubleValue];
+            return duration >= 5;
+        } else {
+            return YES;
+        }
+    }];
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+
+    
 }
 
 @end

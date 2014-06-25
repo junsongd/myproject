@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyLocationAppDelegate : UIResponder <UIApplicationDelegate>
+#import "MyLocationViewController.h"
+
+
+@interface WaterAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -21,6 +21,7 @@
 		3883C210195A2981008F07A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3883C1F2195A2981008F07A1 /* UIKit.framework */; };
 		3883C218195A2981008F07A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3883C216195A2981008F07A1 /* InfoPlist.strings */; };
 		3883C21A195A2981008F07A1 /* waterInterfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3883C219195A2981008F07A1 /* waterInterfaceTests.m */; };
+		3883C228195A3EAC008F07A1 /* leonAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3883C227195A3EAC008F07A1 /* leonAssetPickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		3883C215195A2981008F07A1 /* waterInterfaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "waterInterfaceTests-Info.plist"; sourceTree = "<group>"; };
 		3883C217195A2981008F07A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3883C219195A2981008F07A1 /* waterInterfaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = waterInterfaceTests.m; sourceTree = "<group>"; };
+		3883C226195A3DC3008F07A1 /* leonAssetPickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leonAssetPickerController.h; sourceTree = "<group>"; };
+		3883C227195A3EAC008F07A1 /* leonAssetPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leonAssetPickerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		3883C1F4195A2981008F07A1 /* waterInterface */ = {
 			isa = PBXGroup;
 			children = (
+				3883C225195A3D43008F07A1 /* LeonAssetPickerController */,
 				3883C1FD195A2981008F07A1 /* MyLocationAppDelegate.h */,
 				3883C1FE195A2981008F07A1 /* MyLocationAppDelegate.m */,
 				3883C200195A2981008F07A1 /* Main.storyboard */,
@@ -150,6 +154,15 @@
 				3883C216195A2981008F07A1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3883C225195A3D43008F07A1 /* LeonAssetPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				3883C226195A3DC3008F07A1 /* leonAssetPickerController.h */,
+				3883C227195A3EAC008F07A1 /* leonAssetPickerController.m */,
+			);
+			name = LeonAssetPickerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +265,7 @@
 			files = (
 				3883C1FB195A2981008F07A1 /* main.m in Sources */,
 				3883C205195A2981008F07A1 /* MyLocationViewController.m in Sources */,
+				3883C228195A3EAC008F07A1 /* leonAssetPickerController.m in Sources */,
 				3883C1FF195A2981008F07A1 /* MyLocationAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
