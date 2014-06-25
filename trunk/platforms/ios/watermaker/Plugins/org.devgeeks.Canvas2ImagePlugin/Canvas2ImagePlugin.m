@@ -12,6 +12,7 @@
 
 @implementation Canvas2ImagePlugin
 @synthesize callbackId;
+@synthesize library=_library;
 
 //-(CDVPlugin*) initWithWebView:(UIWebView*)theWebView
 //{
@@ -25,8 +26,23 @@
 	NSData* imageData = [NSData dataFromBase64String:[command.arguments objectAtIndex:0]];
 	
 	UIImage* image = [[[UIImage alloc] initWithData:imageData] autorelease];
-	
-	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    NSString *albumName=@"watermarker";
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+   // create album
+    [library addAssetsGroupAlbumWithName:albumName
+                             resultBlock:^(ALAssetsGroup *group) {
+                                 NSLog(@"added album:%@", albumName);
+                                 
+                             }
+                            failureBlock:^(NSError *error) {
+                                NSLog(@"error adding album");
+                            }];
+ // add image to album
+    [library saveImage:image toAlbum:@"watermarker" withCompletionBlock:^(NSError *error) {
+        if (error!=nil) {
+            NSLog(@"Big error: %@", [error description]);
+        }
+    }];
 	
 }
 
