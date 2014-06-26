@@ -36,7 +36,7 @@
     
     ALAssetsLibrary *assetLibrary = [[ALAssetsLibrary alloc] init];
     self.library = assetLibrary;
-
+    
     // Load Albums into assetGroups
     dispatch_async(dispatch_get_main_queue(), ^
     {

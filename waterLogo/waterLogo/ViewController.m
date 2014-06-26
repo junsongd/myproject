@@ -24,6 +24,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +77,7 @@
 
 #pragma mark - UIScrollView Delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    photoPageControl.currentPage=floor(scrollView.contentOffset.x/scrollView.frame.size.width);;
+    photoPageControl.currentPage=floor(scrollView.contentOffset.x/scrollView.frame.size.width);
 }
 
 
