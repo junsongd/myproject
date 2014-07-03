@@ -9,45 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "watermaker/Plugins/org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.m"
-            timestampString = "425420400.558188"
+            filePath = "watermaker/main.m"
+            timestampString = "425519747.207618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-saveImageDataToLibrary:"
-            landmarkType = "5">
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "main()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "watermaker/Plugins/org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.m"
-            timestampString = "425421600.394514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-image:didFinishSavingWithError:contextInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "watermaker/Plugins/org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.m"
-            timestampString = "425421600.394514"
+            filePath = "watermaker/Plugins/com.synconset.imagepicker/ELCImagePickerController.m"
+            timestampString = "425519918.056728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "-image:didFinishSavingWithError:contextInfo:"
+            landmarkName = "-selectedAssets:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "watermaker/Plugins/org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.m"
-            timestampString = "425421600.394514"
+            timestampString = "425525157.13528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-saveImageDataToLibrary:"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-saveImageDataToLibraryFromUIImage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +58,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "watermaker/Plugins/org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.m"
-            timestampString = "425421600.394514"
+            timestampString = "425525173.303882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-saveImageDataToLibrary:"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-saveImageDataToLibraryFromUIImage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "watermaker/Classes/CreateWaterMark.m"
+            timestampString = "425669951.663619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-imageWithTransImage:addtransparentImage:withPosition:withOpacity:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,14 +89,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "watermaker/Plugins/org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.m"
-            timestampString = "425421600.394514"
+            filePath = "www/js/getImageConvertProgressPlugin.js"
+            timestampString = "425683872.649557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-saveImageDataToLibrary:"
-            landmarkType = "5">
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "GetImageConvertProgress.prototype.getInfo"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -105,45 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "watermaker/Classes/ALAssetsLibrary+CustomPhotoAlbum.m"
-            timestampString = "425421713.763638"
+            filePath = "watermaker/Plugins/getImageConvertProgress.m"
+            timestampString = "425729951.180438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "-saveImage:toAlbum:withCompletionBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "watermaker/Classes/ALAssetsLibrary+CustomPhotoAlbum.m"
-            timestampString = "425421829.530244"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "-saveImage:toAlbum:withCompletionBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "watermaker/Classes/ALAssetsLibrary+CustomPhotoAlbum.m"
-            timestampString = "425421831.289983"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-saveImage:toAlbum:withCompletionBlock:"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-getInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -27,15 +27,17 @@
     self.selected = !self.selected;
 }
 
-- (void)setSelected:(BOOL)selected
-{
-    if (selected) {
-        if ([_parent respondsToSelector:@selector(shouldSelectAsset:)]) {
-            if (![_parent shouldSelectAsset:self]) {
-                return;
-            }
+- (BOOL)shouldSelect{
+    if ([_parent respondsToSelector:@selector(shouldSelectAsset:)]) {
+        if (![_parent shouldSelectAsset:self]) {
+            return NO;
         }
     }
+    return YES;
+}
+
+- (void)setSelected:(BOOL)selected
+{
     _selected = selected;
     if (selected) {
         if (_parent != nil && [_parent respondsToSelector:@selector(assetSelected:)]) {

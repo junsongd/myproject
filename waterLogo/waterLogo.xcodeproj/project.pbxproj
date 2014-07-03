@@ -401,6 +401,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "waterLogo/waterLogo-Prefix.pch";
 				INFOPLIST_FILE = "waterLogo/waterLogo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -414,6 +415,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "waterLogo/waterLogo-Prefix.pch";
 				INFOPLIST_FILE = "waterLogo/waterLogo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -478,6 +480,7 @@
 				3883C2B7195B46B2008F07A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3883C2B8195B46B2008F07A1 /* Build configuration list for PBXNativeTarget "waterLogoTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +489,7 @@
 				3883C2BA195B46B2008F07A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

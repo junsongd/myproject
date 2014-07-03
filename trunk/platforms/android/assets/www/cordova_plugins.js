@@ -19,7 +19,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "com.synconset.imagepicker": "1.0.4",
-    "org.devgeeks.Canvas2ImagePlugin": "0.6.0"
+    "org.devgeeks.Canvas2ImagePlugin": "0.6.0",
+    "org.apache.cordova.console": "0.2.10-dev"
 }
 // BOTTOM OF METADATA
 });

@@ -1,8 +1,11 @@
+var w;
+var g_result;
 
 var watermarker = {
     
     app_width : "",
     app_height: "",
+    
     
     
     init : function ()
@@ -12,31 +15,54 @@ var watermarker = {
         watermarker.app_height =  $(document).height();
         
         $("#btn_select_photo").click(function(){watermarker.selectPhotoButtonClicked();});
+        
+          //   window.plugins.getImageConvertProgress.getInfo();
+        
+        
+        
     },
+    
+    startWorker : function(results) {
+            },
+    
+    stopWorker : function() {
+        w.terminate();
+    },
+    
+    buildImage : function(g_result) {
+        
+      
+        
+    },
+
+
     
     // click select photo function
     selectPhotoButtonClicked : function ()
     {
         window.imagePicker.getPictures(
                                        function(results) {
-                                            watermarker.displayImageList(results);
-                                            wmark.init({
-                                                  /* config goes here */
+                                            g_result = results;
+                                            //watermarker.displayImageList(results);
+                                       /*
+                                       wmark.init({
+                                                  "imgQueue": g_result, //image queue
                                                   "position": "bottom-right", // default "bottom-right"
                                                   "opacity": 70, // default 50
                                                   "className": "watermark", // default "watermark"
                                                   "path": "https://dl.dropboxusercontent.com/u/74389544/watermarkjs/demos/img/qr.png"
-                                            });
-
+                                                  });
+                                        */
+ 
                                        }, function (error) {
                                             console.log('Error: ' + error);
                                        }, {
-                                            maximumImagesCount: 10,
-                                            width: 320
+                                            maximumImagesCount: 100,
+                                            width: 320,
                                        }
                                        );
     },
-    
+    /*
     displayImageList : function(imageList)
     {
           $('#imagelist').html(" ");
@@ -46,6 +72,11 @@ var watermarker = {
           $('#imagelist').prepend('<li class= "imageItem "><img class ="image watermark" src ='+ imgUrl+'></img></li>');
                
           }
+    },
+    */
+    
+    robin : function() {
+        var img = new Image();
     },
     
     saveImageToPhone : function (url, success, error) {
@@ -78,6 +109,12 @@ var watermarker = {
         catch(e) {
             error(e.message);
         }
+    },
+    
+    displayProgress : function()
+    {
+        alert('');
+    
     }
    
 

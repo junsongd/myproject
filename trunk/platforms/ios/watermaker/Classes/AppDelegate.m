@@ -88,7 +88,7 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
 
-    return YES;
+     return YES;
 }
 
 // this happens while we are running ( in the background, or from within our own app )

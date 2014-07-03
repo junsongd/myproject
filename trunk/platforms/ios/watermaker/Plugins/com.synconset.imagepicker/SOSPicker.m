@@ -10,12 +10,18 @@
 #import "ELCAlbumPickerController.h"
 #import "ELCImagePickerController.h"
 #import "ELCAssetTablePicker.h"
+#import "Canvas2ImagePlugin.h"
+#import "CreateWaterMark.h"
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 
 #define CDV_PHOTO_PREFIX @"cdv_photo_"
 
 @implementation SOSPicker
 
 @synthesize callbackId;
+@synthesize library=_library;
+@synthesize imagelist=_imagelist;
+
 
 - (void) getPictures:(CDVInvokedUrlCommand *)command {
 	NSDictionary *options = [command.arguments objectAtIndex: 0];
@@ -47,35 +53,34 @@
 	[self.viewController presentViewController:imagePicker
 	                       animated:YES
 	                     completion:nil];
+    
+    self.backgroundTask = UIBackgroundTaskInvalid;
 }
 
-
-- (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
-	CDVPluginResult* result = nil;
-	NSMutableArray *resultStrings = [[NSMutableArray alloc] init];
-    NSData* data = nil;
-    NSString* docsPath = [NSTemporaryDirectory()stringByStandardizingPath];
-    NSError* err = nil;
-    NSFileManager* fileMgr = [[NSFileManager alloc] init];
-    NSString* filePath;
-    ALAsset* asset = nil;
-    UIImageOrientation orientation = UIImageOrientationUp;;
+- (void)doInBackgroud : (NSDictionary *)dict
+{
     CGSize targetSize = CGSizeMake(self.width, self.height);
-	for (NSDictionary *dict in info) {
-        asset = [dict objectForKey:@"ALAsset"];
-        // From ELCImagePickerController.m
-
-        int i = 1;
-        do {
-            filePath = [NSString stringWithFormat:@"%@/%@%03d.%@", docsPath, CDV_PHOTO_PREFIX, i++, @"jpg"];
-        } while ([fileMgr fileExistsAtPath:filePath]);
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    NSData* data = nil;
+    NSString* albumName= @"watermarker";
+    //create image list
+    NSMutableArray *imagelist = [[NSMutableArray alloc]   init];
+    @autoreleasepool {
         
-        @autoreleasepool {
+        NSArray *info = dict[@"dict"];
+        int count = 0;
+        
+        for (NSDictionary *dict in info) {
+            count++;
+            
+            ALAsset* asset = [dict objectForKey:@"ALAsset"];
+            ELCImagePickerController *picker = dict[@"picker"];
             ALAssetRepresentation *assetRep = [asset defaultRepresentation];
             CGImageRef imgRef = NULL;
+            UIImageOrientation orientation = UIImageOrientationUp;
             
-            //defaultRepresentation returns image as it appears in photo picker, rotated and sized,
-            //so use UIImageOrientationUp when creating our image below.
+            NSURL  *resourceURL = [dict objectForKey:UIImagePickerControllerReferenceURL];
+
             if (picker.returnsOriginalImage) {
                 imgRef = [assetRep fullResolutionImage];
                 orientation = [assetRep orientation];
@@ -90,16 +95,154 @@
                 UIImage* scaledImage = [self imageByScalingNotCroppingForSize:image toSize:targetSize];
                 data = UIImageJPEGRepresentation(scaledImage, self.quality/100.0f);
             }
-            
-            if (![data writeToFile:filePath options:NSAtomicWrite error:&err]) {
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_IO_EXCEPTION messageAsString:[err localizedDescription]];
-                break;
-            } else {
-                [resultStrings addObject:[[NSURL fileURLWithPath:filePath] absoluteString]];
-            }
-        }
+            //add image to list
+            [imagelist addObject:image];
+             self.imagelist = imagelist;
+        /**
+            // add image to album
+            [library saveImage:image toAlbum:@"watermarker" withCount:count withCompletionBlock:^(NSError *error) {
+                if (error) {
+                    NSLog(@"%@", error.localizedDescription);
+                    
+                }
 
+            }];**/
+     /**
+      for (int i = 0; i < self.imagelist.count; i++) {
+             UIImage * currentimage = [self.imagelist objectAtIndex:i];
+                     
+      } ];**/
+          
+          CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
+          
+          UIImage* logoImage = [UIImage imageNamed:@"qr"];
+          
+          //  UIImage* resultImage = [imageCreator imageWithLogoImage:image logo:logoImage];
+          UIImage* resultImage = [imageCreator imageWithTransImage:image addtransparentImage:logoImage withPosition:(NSString*) @"topLeft" withOpacity :(float) 1.0 ];
+          
+          
+          
+           UIImageWriteToSavedPhotosAlbum(resultImage, self, @selector(imageSavedToPhotosAlbum: didFinishSavingWithError: contextInfo:), nil);
+             NSLog(@"saved %d", count);
+          
+          
+            }
+        
+        }
+    
+}
+
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error) {
+        [self tryWriteAgain:image];
+    }
+}
+
+-(void)tryWriteAgain:(UIImage *)image
+{
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(imageSavedToPhotosAlbum: didFinishSavingWithError: contextInfo:), nil);
+}
+
+
+//save image
+/**
+-(void) saveCurrent : (int) count{
+    UIImage * currentimage = [self.imagelist objectAtIndex:0];
+    // add image to album
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+
+    [library saveImage:currentimage toAlbum:@"watermarker" withCount:count withCompletionBlock:^(NSError *error) {
+        if (error) {
+            //NSLog(@"%@", error.localizedDescription);
+            [self saveCurrent :count];
+        }
+        else {
+            if (self.imagelist.count > 0)
+            {
+                [self.imagelist removeObjectAtIndex:0];
+            }
+             [self saveNext: count];
+        }
+       
+        
+    }];
+ 
+}
+-(void) saveNext : (int) count{
+	if (self.imagelist.count > 0) {
+		UIImage *image = [self.imagelist objectAtIndex:0];
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        [library saveImage:image toAlbum:@"watermarker" withCount:count withCompletionBlock:^(NSError *error) {
+            if (error) {
+                //NSLog(@"%@", error.localizedDescription);
+                [self saveCurrent : count];
+            }
+            else {
+                if (self.imagelist.count > 0)
+                {
+                    [self.imagelist removeObjectAtIndex:0];
+                }
+                  [self saveNext :count];
+            }
+          
+            
+        }];
+ 	 
+    }
+	else {
+		[self allDone];
 	}
+}**/
+
+
+-(void) saveNext{
+	if (self.imagelist.count > 0) {
+		UIImage *image = [self.imagelist objectAtIndex:0];
+		UIImageWriteToSavedPhotosAlbum(image, self, @selector(savedPhotoImage:didFinishSavingWithError:), nil);
+	}
+	else {
+		[self allDone];
+	}
+}
+
+-(void) savedPhotoImage:(UIImage*)image didFinishSavingWithError: (NSError *)error  {
+	if (error) {
+		//NSLog(@"%@", error.localizedDescription);
+	}
+	else {
+		[self.imagelist removeObjectAtIndex:0];
+	}
+	[self saveNext];
+}
+
+
+
+
+
+
+
+-(void) allDone{
+    NSLog(@"allDone" );
+
+}
+
+
+- (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
+	CDVPluginResult* result = nil;
+	NSMutableArray *resultStrings = [[NSMutableArray alloc] init];
+    
+    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        NSLog(@"Background handler called. Not running background tasks anymore.");
+        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+        self.backgroundTask = UIBackgroundTaskInvalid;
+    }];
+    
+
+    [NSThread detachNewThreadSelector:@selector (doInBackgroud:) // have to add colon
+                toTarget:self
+                withObject:@{ @"dict" : info, @"picker" : picker }];
+
 	
 	if (nil == result) {
 		result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:resultStrings];

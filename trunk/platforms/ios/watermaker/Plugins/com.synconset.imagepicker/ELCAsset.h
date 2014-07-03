@@ -15,6 +15,7 @@
 @optional
 - (void)assetSelected:(ELCAsset *)asset;
 - (BOOL)shouldSelectAsset:(ELCAsset *)asset;
+
 @end
 
 
@@ -25,5 +26,6 @@
 @property (nonatomic, assign) BOOL selected;
 
 - (id)initWithAsset:(ALAsset *)asset;
+- (BOOL)shouldSelect;
 
 @end

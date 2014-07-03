@@ -81,6 +81,8 @@
 				opacity = (255/(100/config["opacity"]));
 			if(config["className"])
 				className = config["className"];
+            if(config["imgQueue"])
+                imgQueue = config["imgQueue"];
 			
 			initCanvas();
 			initWatermark();
@@ -110,9 +112,8 @@
 			gctx.drawImage(watermark, x, y);
 			img.onload = null;
 	
-			img.src = gcanvas.toDataURL();
-            
-            //Robin
+            img.src = gcanvas.toDataURL();
+              
             var success = function(msg){
               console.info(msg);
             };
@@ -120,15 +121,35 @@
             var error = function(err){
               console.error(err);
             };
-            watermarker.saveImageToPhone(img.src,success,error);
-              
+              watermarker.saveImageToPhone(img.src,success,error);
 		},
 		applyWatermarks = function(){
 			setTimeout(function(){
-				var els = doc.getElementsByClassName(className),
+				//var els = doc.getElementsByClassName(className),
+                var els = imgQueue;
 				len = els.length;
+                
+                var myJsonString = JSON.stringify(imgQueue);
+                var wb;
+                if(typeof(Worker) !== "undefined") {
+                       
+                       if(typeof(wb) == "undefined") {
+                            wb = new Worker("js/worker.js");
+                       }
+                       
+                       wb.postMessage(myJsonString);
+                       
+                       wb.onmessage = function(event) {
+                            alert(event.data);
+                       };
+                } else {
+                       alert("Sorry! No Web Worker support.");
+                }
+                /*
 				while(len--){
-					var img = els[len];
+                    var img = new Image();
+                       img.src = els[len]
+					//var img = els[len];
 					if(img.tagName.toUpperCase() != "IMG")
 						continue;
 					
@@ -139,7 +160,7 @@
 					}else{
 						applyWatermark(img);
 					}
-				}
+				}*/
 			},10);
 		};
 		

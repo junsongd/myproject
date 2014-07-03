@@ -20,6 +20,30 @@
 //    return self;
 //}
 
+- (void)saveImageDataToLibraryFromUIImage:(NSData*)imageData
+{
+	UIImage* image = [[[UIImage alloc] initWithData:imageData] autorelease];
+    
+    NSString *albumName=@"watermarker";
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    // create album
+    [library addAssetsGroupAlbumWithName:albumName
+                             resultBlock:^(ALAssetsGroup *group) {
+                                 NSLog(@"added album:%@", albumName);
+                                 
+                             }
+                            failureBlock:^(NSError *error) {
+                                NSLog(@"error adding album");
+                            }];
+    // add image to album
+    [library saveImage:image toAlbum:@"watermarker" withCompletionBlock:^(NSError *error) {
+        if (error!=nil) {
+            NSLog(@"Big error: %@", [error description]);
+        }
+    }];
+	
+}
+
 - (void)saveImageDataToLibrary:(CDVInvokedUrlCommand*)command
 {
     self.callbackId = command.callbackId;

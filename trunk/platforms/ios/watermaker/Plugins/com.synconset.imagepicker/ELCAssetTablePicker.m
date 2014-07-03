@@ -37,7 +37,9 @@
 	[self.tableView setAllowsSelection:NO];
 
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    NSMutableArray *tempSelectedArray = [[NSMutableArray alloc] init];
     self.elcAssets = tempArray;
+    self.selectedElcAssets = tempSelectedArray;
 	
     if (self.immediateReturn) {
         
@@ -113,27 +115,33 @@
 }
 
 - (void)doneAction:(id)sender
-{	
-	NSMutableArray *selectedAssetsImages = [[NSMutableArray alloc] init];
-	    
-	for (ELCAsset *elcAsset in self.elcAssets) {
-		if ([elcAsset selected]) {
+{
+    
+    NSMutableArray *selectedAssetsImages = [[NSMutableArray alloc] init];
+    
+	for (ELCAsset *elcAsset in self.selectedElcAssets) {
 			[selectedAssetsImages addObject:[elcAsset asset]];
-		}
 	}
-    [self.parent selectedAssets:selectedAssetsImages];
+    
+    /*
+    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        NSLog(@"Background handler called. Not running background tasks anymore.");
+        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+        self.backgroundTask = UIBackgroundTaskInvalid;
+    }];
+     */
+    
+    
+    
+    [self.parent selectedAssets: selectedAssetsImages];
 }
 
 
 - (BOOL)shouldSelectAsset:(ELCAsset *)asset
 {
-    NSUInteger selectionCount = 0;
-    for (ELCAsset *elcAsset in self.elcAssets) {
-        if (elcAsset.selected) selectionCount++;
-    }
     BOOL shouldSelect = YES;
     if ([self.parent respondsToSelector:@selector(shouldSelectAsset:previousCount:)]) {
-        shouldSelect = [self.parent shouldSelectAsset:asset previousCount:selectionCount];
+        shouldSelect = [self.parent shouldSelectAsset:asset previousCount:[self.selectedElcAssets count]];
     }
     return shouldSelect;
 }
@@ -190,6 +198,8 @@
         cell = [[ELCAssetCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    [cell callBack:self.selectedElcAssets];
+    
     [cell setAssets:[self assetsForIndexPath:indexPath]];
     
     return cell;
@@ -211,6 +221,12 @@
 	}
     
     return count;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 

@@ -28,6 +28,9 @@
         },
         "org.devgeeks.Canvas2ImagePlugin": {
             "PACKAGE_NAME": "com.xd.watermaker"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.xd.watermaker"
         }
     },
     "dependent_plugins": {}

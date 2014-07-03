@@ -96,8 +96,12 @@
             imgview.clipsToBounds=YES;
             UIImage *tempImg=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [imgview setImage:tempImg];
-                [src addSubview:imgview];
+              //  [imgview setImage:tempImg];
+               //[src addSubview:imgview];
+                
+                
+                
+                
             });
         }
     });

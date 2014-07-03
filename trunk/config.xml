@@ -9,4 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="getImageConvertProgress">
+        <param name="ios-package" value="getImageConvertProgress" />
+    </feature>
 </widget>

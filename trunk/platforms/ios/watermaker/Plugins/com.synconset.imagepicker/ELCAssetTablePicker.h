@@ -16,6 +16,7 @@
 @property (nonatomic, weak) id <ELCAssetSelectionDelegate> parent;
 @property (nonatomic, strong) ALAssetsGroup *assetGroup;
 @property (nonatomic, strong) NSMutableArray *elcAssets;
+@property (nonatomic, strong) NSMutableArray *selectedElcAssets;
 @property (nonatomic, strong) IBOutlet UILabel *selectedAssetsLabel;
 @property (nonatomic, assign) BOOL singleSelection;
 @property (nonatomic, assign) BOOL immediateReturn;

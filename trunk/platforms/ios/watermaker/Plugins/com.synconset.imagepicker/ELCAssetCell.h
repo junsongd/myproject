@@ -12,4 +12,6 @@
 
 - (void)setAssets:(NSArray *)assets;
 
+- (void)callBack:(NSMutableArray *) selectedAssets;
+
 @end

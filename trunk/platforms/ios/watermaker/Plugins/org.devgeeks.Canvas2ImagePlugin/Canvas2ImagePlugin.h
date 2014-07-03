@@ -22,4 +22,6 @@
 
 - (void)saveImageDataToLibrary:(CDVInvokedUrlCommand*)command;
 
+- (void)saveImageDataToLibraryFromUIImage:(NSData*)imageData;
+
 @end

@@ -6,27 +6,86 @@
 //
 
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
+#import "CreateWaterMark.h"
+#import "getImageConvertProgress.h"
+ @implementation ALAssetsLibrary(CustomPhotoAlbum)
 
-@implementation ALAssetsLibrary(CustomPhotoAlbum)
 
--(void)saveImage:(UIImage*)image toAlbum:(NSString*)albumName withCompletionBlock:(SaveImageCompletion)completionBlock
+-(void)saveImage:(UIImage*)image toAlbum:(NSString*)albumName withCount:(int)count withCompletionBlock:(SaveImageCompletion)completionBlock
 {
+
+    CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
+
+     UIImage* logoImage = [UIImage imageNamed:@"qr"];
+
+  //  UIImage* resultImage = [imageCreator imageWithLogoImage:image logo:logoImage];
+    UIImage* resultImage = [imageCreator imageWithTransImage:image addtransparentImage:logoImage withPosition:(NSString*) @"topLeft" withOpacity :(float) 1.0 ];
+    
+        //write the image data to the assets library (camera roll)
+        [self writeImageToSavedPhotosAlbum:resultImage.CGImage orientation:(ALAssetOrientation)resultImage.imageOrientation
+                           completionBlock:^(NSURL* assetURL, NSError* error) {
+                               
+                               //error handling
+                               if (error!=nil) {
+                                   //Recursively try again if we failed to save
+                                   
+                                   if([error code] == ALAssetsLibraryWriteBusyError)
+                                       
+                                   {
+                                     
+                                    }
+                                   [self saveImage:image toAlbum:albumName withCount:count withCompletionBlock:completionBlock];
+                                //   NSLog(@"%@",[error localizedDescription]);
+                                //   NSLog(@"Save image error %i", count);
+                                   completionBlock(error);
+                                   return;
+                                   
+
+                                }else
+                               {
+                                   NSLog(@"Save image %i", count);
+
+                               }
+                               
+                               
+                               //add the asset to the custom photo album
+                               [self addAssetURL: assetURL
+                                         toAlbum:albumName
+                             withCompletionBlock:completionBlock];
+                               
+                           }];
+        
+      /**
+    
     //write the image data to the assets library (camera roll)
-    [self writeImageToSavedPhotosAlbum:image.CGImage orientation:(ALAssetOrientation)image.imageOrientation 
+    [self writeImageToSavedPhotosAlbum:resultImage.CGImage orientation:(ALAssetOrientation)resultImage.imageOrientation
                         completionBlock:^(NSURL* assetURL, NSError* error) {
                               
                           //error handling
                           if (error!=nil) {
-                              completionBlock(error);
+                              //Recursively try again if we failed to save
+                              
+                              if([error code] == ALAssetsLibraryWriteBusyError)
+                                  
+                              {
+                                  [self saveImage:image toAlbum:albumName withCount:count withCompletionBlock:completionBlock];
+                              }
+                              
+                              NSLog(@"%@",[error localizedDescription]);
+ 
+                              
+                              //completionBlock(error);
                               return;
                           }
-
+                            
+                            NSLog(@"Save image %i", count);
+                         
                           //add the asset to the custom photo album
                           [self addAssetURL: assetURL 
                                     toAlbum:albumName 
                         withCompletionBlock:completionBlock];
                           
-                      }];
+                      }];**/
 }
 
 -(void)addAssetURL:(NSURL*)assetURL toAlbum:(NSString*)albumName withCompletionBlock:(SaveImageCompletion)completionBlock

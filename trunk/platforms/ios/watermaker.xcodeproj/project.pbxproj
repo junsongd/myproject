@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0702FBDFE77C43E69C1F49B7 /* SOSPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B15B9D986304E4195F63608 /* SOSPicker.m */; };
+		13D5CA3233CA41A4959242B9 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B69E7B1B3A4084AF7959B1 /* CDVLogger.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F766FE113BBADB100FB74C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F766FDC13BBADB100FB74C0 /* Localizable.strings */; };
 		2431C99840644C91A6621D77 /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD877F83BEF4F1CA6BA6F74 /* ELCAlbumPickerController.xib */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		2952DB5C195E3FFD0051CE47 /* CreateWaterMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 2952DB5B195E3FFD0051CE47 /* CreateWaterMark.m */; };
+		2952DB5E195E47FB0051CE47 /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = 2952DB5D195E47FB0051CE47 /* qr.png */; };
+		2970F75D195F65E600E895B1 /* getImageConvertProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 2970F75C195F65E600E895B1 /* getImageConvertProgress.m */; };
 		29E1604E195B6A4C0077FACD /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E1604D195B6A4C0077FACD /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
@@ -82,9 +86,15 @@
 		1F766FDD13BBADB100FB74C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		1F766FE013BBADB100FB74C0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2952DB5A195E3FFD0051CE47 /* CreateWaterMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWaterMark.h; sourceTree = "<group>"; };
+		2952DB5B195E3FFD0051CE47 /* CreateWaterMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWaterMark.m; sourceTree = "<group>"; };
+		2952DB5D195E47FB0051CE47 /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
+		2970F75B195F65E600E895B1 /* getImageConvertProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getImageConvertProgress.h; sourceTree = "<group>"; };
+		2970F75C195F65E600E895B1 /* getImageConvertProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getImageConvertProgress.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29E1604C195B6A4C0077FACD /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		29E1604D195B6A4C0077FACD /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
+		2B20C62D8DCC4079A3F6623A /* CDVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = org.apache.cordova.console/CDVLogger.h; sourceTree = "<group>"; };
 		2FBA4FDF5D9D4C5FA7CBE8DC /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELCAssetSelectionDelegate.h; path = com.synconset.imagepicker/ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
@@ -128,6 +138,7 @@
 		896690B356FC487BADCE0F55 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELCAlbumPickerController.h; path = com.synconset.imagepicker/ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		8B01972955EF458F9922DE35 /* SOSPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSPicker.h; path = com.synconset.imagepicker/SOSPicker.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* watermaker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "watermaker-Info.plist"; path = "../watermaker-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		94B69E7B1B3A4084AF7959B1 /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = org.apache.cordova.console/CDVLogger.m; sourceTree = "<group>"; };
 		96BB5C3657B042618328EDC7 /* ELCAssetPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
 		B9E557F826074CDB8A947E4A /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELCImagePickerController.h; path = com.synconset.imagepicker/ELCImagePickerController.h; sourceTree = "<group>"; };
 		BA0168E219BA42A2B63043C2 /* Canvas2ImagePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Canvas2ImagePlugin.h; path = org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.h; sourceTree = "<group>"; };
@@ -160,13 +171,17 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2952DB5D195E47FB0051CE47 /* qr.png */,
 				29E1604C195B6A4C0077FACD /* ALAssetsLibrary+CustomPhotoAlbum.h */,
 				29E1604D195B6A4C0077FACD /* ALAssetsLibrary+CustomPhotoAlbum.m */,
 				302D95EE14D2391D003F00A1 /* MainViewController.h */,
 				302D95EF14D2391D003F00A1 /* MainViewController.m */,
+				307C750510C5A3420062BCA9 /* Plugins */,
 				302D95F014D2391D003F00A1 /* MainViewController.xib */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
+				2952DB5A195E3FFD0051CE47 /* CreateWaterMark.h */,
+				2952DB5B195E3FFD0051CE47 /* CreateWaterMark.m */,
 			);
 			name = Classes;
 			path = watermaker/Classes;
@@ -205,7 +220,6 @@
 				EB87FDF11871DA420020F90C /* Staging */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
-				307C750510C5A3420062BCA9 /* Plugins */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -282,6 +296,10 @@
 				B9E557F826074CDB8A947E4A /* ELCImagePickerController.h */,
 				42F22190A00A45FF8493C4A8 /* Canvas2ImagePlugin.m */,
 				BA0168E219BA42A2B63043C2 /* Canvas2ImagePlugin.h */,
+				2970F75B195F65E600E895B1 /* getImageConvertProgress.h */,
+				2970F75C195F65E600E895B1 /* getImageConvertProgress.m */,
+				94B69E7B1B3A4084AF7959B1 /* CDVLogger.m */,
+				2B20C62D8DCC4079A3F6623A /* CDVLogger.h */,
 			);
 			name = Plugins;
 			path = watermaker/Plugins;
@@ -376,6 +394,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "watermaker" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -421,6 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2952DB5E195E47FB0051CE47 /* qr.png in Resources */,
 				7E7966E41810823500FA85AD /* icon-76.png in Resources */,
 				7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */,
 				308D05371370CCF300D202BF /* icon-72.png in Resources */,
@@ -480,7 +508,9 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				2952DB5C195E3FFD0051CE47 /* CreateWaterMark.m in Sources */,
 				29E1604E195B6A4C0077FACD /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
+				2970F75D195F65E600E895B1 /* getImageConvertProgress.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				0702FBDFE77C43E69C1F49B7 /* SOSPicker.m in Sources */,
 				93CCF55FBA1C4DC992114675 /* ELCAlbumPickerController.m in Sources */,
@@ -489,6 +519,7 @@
 				964FF5E074FD4EBF97169050 /* ELCAssetTablePicker.m in Sources */,
 				B9F04DD08F0C470CB14229D4 /* ELCImagePickerController.m in Sources */,
 				A36D23D0B6D44818A112B55A /* Canvas2ImagePlugin.m in Sources */,
+				13D5CA3233CA41A4959242B9 /* CDVLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +574,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: junsong dong (2G562NT63P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: junsong dong (2G562NT63P)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -567,6 +600,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = watermaker;
+				PROVISIONING_PROFILE = "B88CD4DB-2DB5-4596-BA7E-153211089629";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -576,6 +610,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: junsong dong (2G562NT63P)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "watermaker/watermaker-Prefix.pch";
@@ -598,6 +633,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = watermaker;
+				PROVISIONING_PROFILE = "B88CD4DB-2DB5-4596-BA7E-153211089629";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -612,7 +648,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: junsong dong (2G562NT63P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: junsong dong (2G562NT63P)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
@@ -642,6 +679,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "B88CD4DB-2DB5-4596-BA7E-153211089629";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -687,6 +725,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "B88CD4DB-2DB5-4596-BA7E-153211089629";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";

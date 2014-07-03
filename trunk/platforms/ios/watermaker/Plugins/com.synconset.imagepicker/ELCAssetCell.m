@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSArray *rowAssets;
 @property (nonatomic, strong) NSMutableArray *imageViewArray;
+@property (nonatomic, strong) NSMutableArray *selectedArray;
 @property (nonatomic, strong) NSMutableArray *overlayViewArray;
 
 @end
@@ -34,6 +35,11 @@
         self.overlayViewArray = overlayArray;
 	}
 	return self;
+}
+
+- (void)callBack:(NSMutableArray *) selectedAssets
+{
+    self.selectedArray = selectedAssets;
 }
 
 - (void)setAssets:(NSArray *)assets
@@ -84,10 +90,19 @@
 	for (int i = 0; i < [_rowAssets count]; ++i) {
         if (CGRectContainsPoint(frame, point)) {
             ELCAsset *asset = [_rowAssets objectAtIndex:i];
-            asset.selected = !asset.selected;
-            UIImageView *overlayView = [_overlayViewArray objectAtIndex:i];
-            overlayView.hidden = !asset.selected;
-            break;
+            
+                if (asset.selected) {
+                    [self.selectedArray removeObject:asset];
+                }else if(!asset.selected && asset.shouldSelect ){
+                    [self.selectedArray addObject:asset];
+                }else{
+                    return;
+                }
+                asset.selected = !asset.selected;
+                
+                UIImageView *overlayView = [_overlayViewArray objectAtIndex:i];
+                overlayView.hidden = !asset.selected;
+                break;
         }
         frame.origin.x = frame.origin.x + frame.size.width + 4;
     }
