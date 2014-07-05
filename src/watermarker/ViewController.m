@@ -42,7 +42,46 @@
     imagesaved = 0;
      // self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
     self.configButton.hidden = TRUE;
+    
+   /**
+    UIColor* colorBorder =   [UIColor colorWithRed: 28.0/255.0 green: 191.0/255.0 blue: 97.0/255.0 alpha: 1];
+
+    UIView *bottomBorder = [[UIView alloc] initWithFrame:CGRectMake(0,  self.selectPhotoButton.frame.size.height - 1.0f,  self.selectPhotoButton.frame.size.width, 1)];
+    bottomBorder.backgroundColor = colorBorder;
+    
+    UIView *topBorder = [[UIView alloc] initWithFrame:CGRectMake(1, 0,  self.selectPhotoButton.frame.size.width, 1)];
+    topBorder.backgroundColor = colorBorder;
+    
+    self.selectPhotoButton.layer.cornerRadius = 0;
+    self.takPhotoButton.layer.cornerRadius = 0;
+
+    [ self.selectPhotoButton addSubview:bottomBorder];
+    [ self.selectPhotoButton addSubview:topBorder];
+    [ self.takPhotoButton addSubview:bottomBorder];
+    [ self.takPhotoButton addSubview:topBorder];
+    **/
+    self.selectPhotoButton.layer.borderWidth = 0;
+    self.takPhotoButton.layer.borderWidth = 0;
+  
+    [self setTitle:@"Water Marker"];
+
  }
+- (void)setTitle:(NSString *)title
+{
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    if (!titleView) {
+        titleView = [[UILabel alloc] initWithFrame:CGRectZero];
+        titleView.backgroundColor = [UIColor clearColor];
+       // titleView.font = [UIFont boldSystemFontOfSize:20.0];
+        titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+        
+        titleView.textColor = [UIColor blackColor]; // Change to desired color
+        
+        self.navigationItem.titleView = titleView;
+     }
+    titleView.text = title;
+    [titleView sizeToFit];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -53,7 +92,9 @@
 - (IBAction)selectPhotos:(id)sender {
     
     NSLog(@"selectPhotos");
-   
+    self.progressNum.text = [NSString stringWithFormat:@"%d",0];
+    self.progressView.progress = 0.0;
+
     ZYQAssetPickerController *picker = [[ZYQAssetPickerController alloc] init];
     picker.maximumNumberOfSelection = 50;
     picker.assetsFilter = [ALAssetsFilter allPhotos];
@@ -166,7 +207,8 @@
 
 - (IBAction)takePhotoButton:(id)sender {
     
-  
+     self.progressNum.text = [NSString stringWithFormat:@"%d",0];
+    self.progressView.progress = 0.0;
     //checks if device has a camera
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIAlertView *noCameraAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You don't have a camera for this device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -219,4 +261,5 @@
     self.numberTotal.text = [NSString stringWithFormat:@"%d",0];
     [[picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
+ 
 @end

@@ -463,7 +463,7 @@ static UIColor *titleColor;
 - (void)setupButtons
 {
     self.navigationItem.rightBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", nil)
+    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil)
                                      style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(finishPickingAssets:)];
@@ -524,7 +524,7 @@ static UIColor *titleColor;
         NSString *title;
         
         if (_numberOfVideos == 0)
-            title = [NSString stringWithFormat:NSLocalizedString(@"%ld 张照片", nil), (long)_numberOfPhotos];
+            title = [NSString stringWithFormat:NSLocalizedString(@"%ld photos", nil), (long)_numberOfPhotos];
         else if (_numberOfPhotos == 0)
             title = [NSString stringWithFormat:NSLocalizedString(@"%ld 部视频", nil), (long)_numberOfVideos];
         else
@@ -642,10 +642,10 @@ static UIColor *titleColor;
     NSString *format;
     
     if (photosSelected && videoSelected)
-        format = NSLocalizedString(@"已选择 %ld 个项目", nil);
+        format = NSLocalizedString(@"  %ld selected", nil);
     
     else if (photosSelected)
-        format = (indexPaths.count > 1) ? NSLocalizedString(@"已选择 %ld 张照片", nil) : NSLocalizedString(@"已选择 %ld 张照片 ", nil);
+        format = (indexPaths.count > 1) ? NSLocalizedString(@" %ld selected", nil) : NSLocalizedString(@"%ld selected ", nil);
     
     else if (videoSelected)
         format = (indexPaths.count > 1) ? NSLocalizedString(@"已选择 %ld 部视频", nil) : NSLocalizedString(@"已选择 %ld 部视频 ", nil);
@@ -707,7 +707,7 @@ static UIColor *titleColor;
 {
     NSString *label = [self.assetsGroup valueForProperty:ALAssetsGroupPropertyName];
     
-    return [label stringByAppendingFormat:NSLocalizedString(@"%ld 张照片", nil), (long)[self.assetsGroup numberOfAssets]];
+    return [label stringByAppendingFormat:NSLocalizedString(@"%ld photos", nil), (long)[self.assetsGroup numberOfAssets]];
 }
 
 @end
@@ -777,7 +777,7 @@ static UIColor *titleColor;
     if (picker.showCancelButton)
     {
         self.navigationItem.rightBarButtonItem =
-        [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"取消", nil)
+        [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil)
                                          style:UIBarButtonItemStylePlain
                                         target:self
                                         action:@selector(dismiss:)];
@@ -786,7 +786,7 @@ static UIColor *titleColor;
 
 - (void)localize
 {
-    self.title = NSLocalizedString(@"相簿", nil);
+    self.title = NSLocalizedString(@"Lib", nil);
 }
 
 - (void)setupGroup
@@ -883,13 +883,13 @@ static UIColor *titleColor;
     message.translatesAutoresizingMaskIntoConstraints = NO;
     message.preferredMaxLayoutWidth = 304.0f;
     
-    title.text              = NSLocalizedString(@"此应用无法使用您的照片或视频。", nil);
+    title.text              = NSLocalizedString(@"The application has no qccess your photo library。", nil);
     title.font              = [UIFont boldSystemFontOfSize:17.0];
     title.textColor         = [UIColor colorWithRed:129.0/255.0 green:136.0/255.0 blue:148.0/255.0 alpha:1];
     title.textAlignment     = NSTextAlignmentCenter;
     title.numberOfLines     = 5;
     
-    message.text            = NSLocalizedString(@"你可以在「隐私设置」中启用存取。", nil);
+    message.text            = NSLocalizedString(@"You can configurate in the device settings。", nil);
     message.font            = [UIFont systemFontOfSize:14.0];
     message.textColor       = [UIColor colorWithRed:129.0/255.0 green:136.0/255.0 blue:148.0/255.0 alpha:1];
     message.textAlignment   = NSTextAlignmentCenter;
@@ -931,13 +931,13 @@ static UIColor *titleColor;
     message.translatesAutoresizingMaskIntoConstraints = NO;
     message.preferredMaxLayoutWidth = 304.0f;
     
-    title.text              = NSLocalizedString(@"没有照片或视频。", nil);
+    title.text              = NSLocalizedString(@"No photos。", nil);
     title.font              = [UIFont systemFontOfSize:26.0];
     title.textColor         = [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1];
     title.textAlignment     = NSTextAlignmentCenter;
     title.numberOfLines     = 5;
     
-    message.text            = NSLocalizedString(@"您可以使用 iTunes 将照片和视频\n同步到 iPhone。", nil);
+    message.text            = NSLocalizedString(@"You can synchroniser your photos from iTunes to your iPhone。", nil);
     message.font            = [UIFont systemFontOfSize:18.0];
     message.textColor       = [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1];
     message.textAlignment   = NSTextAlignmentCenter;

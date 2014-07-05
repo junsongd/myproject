@@ -19,7 +19,7 @@
     UIImage *tempImage=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
     
     CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
-    UIImage* logoImage = [UIImage imageNamed:@"qr"];
+    UIImage* logoImage = [UIImage imageNamed:@"Icon@2x.png"];
     UIImage* resultImage = [imageCreator imageWithTransImage:tempImage addtransparentImage:logoImage withPosition:(NSString*) @"topLeft" withOpacity :(float) 0.8 ];
     
     //[assets removeObject:asset];

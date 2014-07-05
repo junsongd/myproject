@@ -30,6 +30,8 @@
 		2993E1301964810700444657 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E12D1964810700444657 /* Icon.png */; };
 		2993E1311964810700444657 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E12E1964810700444657 /* Icon@2x.png */; };
 		2993E133196483AF00444657 /* settings20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E132196483AF00444657 /* settings20.png */; };
+		29AE17F319688859001F177C /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AE17F119688859001F177C /* camera.png */; };
+		29AE17F419688859001F177C /* file.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AE17F219688859001F177C /* file.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		2993E12D1964810700444657 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2993E12E1964810700444657 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2993E132196483AF00444657 /* settings20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings20.png; sourceTree = "<group>"; };
+		29AE17F119688859001F177C /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		29AE17F219688859001F177C /* file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,8 @@
 		2993E12B1964810700444657 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				29AE17F119688859001F177C /* camera.png */,
+				29AE17F219688859001F177C /* file.png */,
 				2993E132196483AF00444657 /* settings20.png */,
 				2993E12C1964810700444657 /* 120x120.png */,
 				2993E12D1964810700444657 /* Icon.png */,
@@ -282,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2970F73C195F593500E895B1 /* qr.png in Resources */,
+				29AE17F419688859001F177C /* file.png in Resources */,
 				2993E1311964810700444657 /* Icon@2x.png in Resources */,
 				29069C13196219EC00F62015 /* ZYQAssetPicker.Bundle in Resources */,
 				2970F719195F535C00E895B1 /* Images.xcassets in Resources */,
+				29AE17F319688859001F177C /* camera.png in Resources */,
 				2970F70B195F535C00E895B1 /* InfoPlist.strings in Resources */,
 				2993E12F1964810700444657 /* 120x120.png in Resources */,
 				2993E1301964810700444657 /* Icon.png in Resources */,
