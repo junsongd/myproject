@@ -786,7 +786,7 @@ static UIColor *titleColor;
 
 - (void)localize
 {
-    self.title = NSLocalizedString(@"Lib", nil);
+    self.title = NSLocalizedString(@"Album", nil);
 }
 
 - (void)setupGroup
@@ -931,13 +931,13 @@ static UIColor *titleColor;
     message.translatesAutoresizingMaskIntoConstraints = NO;
     message.preferredMaxLayoutWidth = 304.0f;
     
-    title.text              = NSLocalizedString(@"No photos。", nil);
+    title.text              = NSLocalizedString(@"No photos", nil);
     title.font              = [UIFont systemFontOfSize:26.0];
     title.textColor         = [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1];
     title.textAlignment     = NSTextAlignmentCenter;
     title.numberOfLines     = 5;
     
-    message.text            = NSLocalizedString(@"You can synchroniser your photos from iTunes to your iPhone。", nil);
+    message.text            = NSLocalizedString(@"", nil);
     message.font            = [UIFont systemFontOfSize:18.0];
     message.textColor       = [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1];
     message.textAlignment   = NSTextAlignmentCenter;

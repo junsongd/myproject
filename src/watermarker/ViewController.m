@@ -166,6 +166,7 @@
                     [self.selectPhotoButton setEnabled:YES];
 
                 }
+               
             }
         }];
            
@@ -261,5 +262,5 @@
     self.numberTotal.text = [NSString stringWithFormat:@"%d",0];
     [[picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
- 
+
 @end

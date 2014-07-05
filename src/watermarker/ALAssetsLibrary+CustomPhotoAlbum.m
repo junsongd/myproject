@@ -12,7 +12,21 @@
 
 -(void)saveImageAsync:(NSMutableArray*)assets progressbar:(UIProgressView*)bar progressNumber:(UILabel*)number totalNumber:(int)total withCompletionBlock:(SaveImageCompletion)completionBlock
 {
-    if(![assets count]) return;
+    if(![assets count])
+    {
+        NSLog(@"startLocalNotification");
+        
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:7];
+        notification.alertBody = @"Your photos are converted!";
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        notification.applicationIconBadgeNumber = 1;
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+         return;
+    }
+   
     
     ALAsset *asset = [assets objectAtIndex:0];
     
@@ -60,8 +74,8 @@
 {
 
      CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
-     UIImage* logoImage = [UIImage imageNamed:@"qr"];
-     UIImage* resultImage = [imageCreator imageWithTransImage:image addtransparentImage:logoImage withPosition:(NSString*) @"topLeft" withOpacity :(float) 0.7 ];
+    UIImage* logoImage = [UIImage imageNamed:@"Icon@2x.png"];
+     UIImage* resultImage = [imageCreator imageWithTransImage:image addtransparentImage:logoImage withPosition:(NSString*) @"topLeft" withOpacity :(float) 0.5 ];
     
          //write the image data to the assets library (camera roll)
     [self writeImageToSavedPhotosAlbum:resultImage.CGImage orientation:(ALAssetOrientation)resultImage.imageOrientation
@@ -85,6 +99,7 @@
                                            [bar setNeedsDisplay];
                                            number.text = [NSString stringWithFormat:@"%d",(int)total];
                                            [number setNeedsDisplay];
+                                           
                                        });
                                        
                                    });
