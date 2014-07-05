@@ -43,27 +43,13 @@
      // self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
     self.configButton.hidden = TRUE;
     
-   /**
-    UIColor* colorBorder =   [UIColor colorWithRed: 28.0/255.0 green: 191.0/255.0 blue: 97.0/255.0 alpha: 1];
-
-    UIView *bottomBorder = [[UIView alloc] initWithFrame:CGRectMake(0,  self.selectPhotoButton.frame.size.height - 1.0f,  self.selectPhotoButton.frame.size.width, 1)];
-    bottomBorder.backgroundColor = colorBorder;
-    
-    UIView *topBorder = [[UIView alloc] initWithFrame:CGRectMake(1, 0,  self.selectPhotoButton.frame.size.width, 1)];
-    topBorder.backgroundColor = colorBorder;
-    
-    self.selectPhotoButton.layer.cornerRadius = 0;
-    self.takPhotoButton.layer.cornerRadius = 0;
-
-    [ self.selectPhotoButton addSubview:bottomBorder];
-    [ self.selectPhotoButton addSubview:topBorder];
-    [ self.takPhotoButton addSubview:bottomBorder];
-    [ self.takPhotoButton addSubview:topBorder];
-    **/
     self.selectPhotoButton.layer.borderWidth = 0;
     self.takPhotoButton.layer.borderWidth = 0;
   
     [self setTitle:@"Water Marker"];
+    self.LoadingMask.hidden =  YES;
+    [self showSimpleActivityIndicatorOnView:self.loadingView];
+    self.loadingView.hidden = YES;
 
  }
 - (void)setTitle:(NSString *)title
@@ -94,6 +80,7 @@
     NSLog(@"selectPhotos");
     self.progressNum.text = [NSString stringWithFormat:@"%d",0];
     self.progressView.progress = 0.0;
+
 
     ZYQAssetPickerController *picker = [[ZYQAssetPickerController alloc] init];
     picker.maximumNumberOfSelection = 50;
@@ -139,8 +126,9 @@
         [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
         self.backgroundTask = UIBackgroundTaskInvalid;
     }];
-    [self.selectPhotoButton setEnabled:NO];
-    
+    self.LoadingMask.hidden =  NO;
+    self.loadingView.hidden = NO;
+
     self.numberTotal.text = [NSString stringWithFormat:@"%lu",assets.count];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -152,7 +140,7 @@
         imagesaved = 0 ;
         numTotal = assets.count;
         
-        [library saveImageAsync:[NSMutableArray arrayWithArray:assets] progressbar:self.progressView progressNumber:self.progressNum totalNumber:(int)assets.count withCompletionBlock:^(NSError *error) {
+        [library saveImageAsync:[NSMutableArray arrayWithArray:assets] progressbar:self.progressView progressNumber:self.progressNum totalNumber:(int)assets.count withMask:self.LoadingMask withIndicator: (UIActivityIndicatorView *)self.loadingView withCompletionBlock:^(NSError *error) {
             if (error!=nil) {
                 NSLog(@"Big error: %@", [error description]);
             }
@@ -233,12 +221,12 @@
 #pragma mark Image picker delegate methdos
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-
+     self.LoadingMask.hidden =  NO;
+     self.loadingView.hidden = NO;
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     imagesaved = 0 ;
     numTotal = 1;
     self.numberTotal.text = [NSString stringWithFormat:@"%d",numTotal];
-    [self.takPhotoButton setEnabled:NO];
      // add image to album
      [library saveImage:image toAlbum:@"watermarker" progressbar:(UIProgressView*)self.progressView progressNumber:self.progressNum totalNumber:(int)numTotal withCompletionBlock:^(NSError *error) {
         if (error!=nil) {
@@ -246,7 +234,9 @@
         }
          else
          {
-             [self.takPhotoButton setEnabled:YES];
+             self.LoadingMask.hidden =  YES;
+             self.loadingView.hidden = YES;
+
 
          }
     }];
@@ -260,7 +250,23 @@
     self.progressView.progress = 0.0;
     self.progressNum.text = [NSString stringWithFormat:@"%d",0];
     self.numberTotal.text = [NSString stringWithFormat:@"%d",0];
+    self.LoadingMask.hidden =  YES;
+
     [[picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
-
+- (UIActivityIndicatorView *)showSimpleActivityIndicatorOnView:(UIView*)aView
+{
+    CGSize viewSize = aView.bounds.size;
+    
+    // create new dialog box view and components
+    UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    activityIndicatorView.center = CGPointMake(viewSize.width / 2.0, viewSize.height / 2.0);
+    
+    [aView addSubview:activityIndicatorView];
+    
+    [activityIndicatorView startAnimating];
+    
+    return activityIndicatorView;
+}
 @end

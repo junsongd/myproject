@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *takPhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *selectPhotoButton;
 
+ @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingView;
 @property (weak, nonatomic) IBOutlet UIButton *configButton;
+@property (weak, nonatomic) IBOutlet UIView *LoadingMask;
+
 
 @end

@@ -10,12 +10,13 @@
   @implementation ALAssetsLibrary(CustomPhotoAlbum)
 
 
--(void)saveImageAsync:(NSMutableArray*)assets progressbar:(UIProgressView*)bar progressNumber:(UILabel*)number totalNumber:(int)total withCompletionBlock:(SaveImageCompletion)completionBlock
+-(void)saveImageAsync:(NSMutableArray*)assets progressbar:(UIProgressView*)bar progressNumber:(UILabel*)number totalNumber:(int)total withMask:(UIView*) loadingMask withIndicator: (UIActivityIndicatorView *) loadingview  withCompletionBlock:(SaveImageCompletion)completionBlock
 {
     if(![assets count])
     {
         NSLog(@"startLocalNotification");
-        
+        loadingMask.hidden = YES;
+        loadingview.hidden = YES;
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:7];
         notification.alertBody = @"Your photos are converted!";
@@ -65,7 +66,7 @@
                                NSLog(@"left image %d", assets.count);
                            }
                            
-                           [self saveImageAsync:assets progressbar:bar progressNumber:number totalNumber:total withCompletionBlock:completionBlock];
+                           [self saveImageAsync:assets progressbar:bar progressNumber:number totalNumber:total withMask: loadingMask withIndicator:loadingview  withCompletionBlock:completionBlock];
                        }];
 }
 

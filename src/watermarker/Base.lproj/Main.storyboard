@@ -77,26 +77,34 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="80" maxX="0.0" maxY="-80"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="jGN-VU-7AM">
+                                <rect key="frame" x="149" y="228" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <view alpha="0.39999999999999963" contentMode="scaleToFill" id="DSt-2l-PZu">
+                                <rect key="frame" x="-1" y="-38" width="320" height="606"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="150" maxX="0.0" maxY="-150"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qnY-38-CKV">
+                                <rect key="frame" x="274" y="526" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="150" maxX="0.0" maxY="-150"/>
+                                <state key="normal" title="Config" image="settings20.png">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9q9-D2-13I">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ogv-O1-hmM">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VDW-47-mF0">
-                                <rect key="frame" x="272" y="6" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="settings20.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mjL-kT-Jka" kind="push" id="5La-BA-LEB"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="9q9-D2-13I"/>
                     <connections>
-                        <outlet property="configButton" destination="VDW-47-mF0" id="fxg-b7-0SG"/>
+                        <outlet property="LoadingMask" destination="DSt-2l-PZu" id="afE-zw-fja"/>
+                        <outlet property="configButton" destination="qnY-38-CKV" id="YzQ-55-U6X"/>
+                        <outlet property="loadingView" destination="jGN-VU-7AM" id="Zde-5L-NSZ"/>
                         <outlet property="numberTotal" destination="6zP-B4-Fgn" id="Rnd-TH-Q01"/>
                         <outlet property="progressNum" destination="IKw-4u-jzA" id="t5D-6N-e0R"/>
                         <outlet property="progressView" destination="Doc-WB-2qe" id="3P6-Rv-2Qe"/>
@@ -168,6 +176,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="n6m-AZ-pXi">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="7X8-n0-h83"/>
                     </connections>
