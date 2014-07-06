@@ -15,7 +15,7 @@
 
 -(void)addAssetURL:(NSURL*)assetURL toAlbum:(NSString*)albumName withCompletionBlock:(SaveImageCompletion)completionBlock;
 
--(void)saveImageAsync:(NSMutableArray*)assets progressbar:(UIProgressView*)bar progressNumber:(UILabel*)number totalNumber:(int)total withMask:(UIView*) loadingMask withIndicator: (UIActivityIndicatorView *) loadingview  withCompletionBlock:(SaveImageCompletion)completionBlock;
+-(void)saveImageAsync:(NSMutableArray*)assets progressbar:(UIProgressView*)bar progressNumber:(UILabel*)number totalNumber:(int)total   withCompletionBlock:(SaveImageCompletion)completionBlock;
 
 -(void)saveImage:(UIImage*)image toAlbum:(NSString*)albumName progressbar:(UIProgressView*)bar progressNumber:(UILabel*)number totalNumber:(int)total withCompletionBlock:(SaveImageCompletion)completionBlock;
 

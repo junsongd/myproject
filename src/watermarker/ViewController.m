@@ -42,14 +42,14 @@
     imagesaved = 0;
      // self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
     self.configButton.hidden = TRUE;
-    
-    self.selectPhotoButton.layer.borderWidth = 0;
-    self.takPhotoButton.layer.borderWidth = 0;
-  
+    self.selectPhotoButton.layer.borderWidth = 1;
+    self.takPhotoButton.layer.borderWidth = 1;
+    UIColor *color_border = [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
+
+    self.takPhotoButton.layer.borderColor = color_border.CGColor;
+    self.selectPhotoButton.layer.borderColor = color_border.CGColor;
     [self setTitle:@"Water Marker"];
-    self.LoadingMask.hidden =  YES;
-    [self showSimpleActivityIndicatorOnView:self.loadingView];
-    self.loadingView.hidden = YES;
+   
 
  }
 - (void)setTitle:(NSString *)title
@@ -77,10 +77,14 @@
 
 - (IBAction)selectPhotos:(id)sender {
     
+    BOOL result = [self checkButtonAvailable];
+    if (!result) {
+        return;
+     }
+    
     NSLog(@"selectPhotos");
     self.progressNum.text = [NSString stringWithFormat:@"%d",0];
     self.progressView.progress = 0.0;
-
 
     ZYQAssetPickerController *picker = [[ZYQAssetPickerController alloc] init];
     picker.maximumNumberOfSelection = 50;
@@ -126,8 +130,8 @@
         [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
         self.backgroundTask = UIBackgroundTaskInvalid;
     }];
-    self.LoadingMask.hidden =  NO;
-    self.loadingView.hidden = NO;
+    //self.LoadingMask.hidden =  NO;
+   // self.loadingView.hidden = NO;
 
     self.numberTotal.text = [NSString stringWithFormat:@"%lu",assets.count];
     
@@ -140,7 +144,7 @@
         imagesaved = 0 ;
         numTotal = assets.count;
         
-        [library saveImageAsync:[NSMutableArray arrayWithArray:assets] progressbar:self.progressView progressNumber:self.progressNum totalNumber:(int)assets.count withMask:self.LoadingMask withIndicator: (UIActivityIndicatorView *)self.loadingView withCompletionBlock:^(NSError *error) {
+        [library saveImageAsync:[NSMutableArray arrayWithArray:assets] progressbar:self.progressView progressNumber:self.progressNum totalNumber:(int)assets.count withCompletionBlock:^(NSError *error) {
             if (error!=nil) {
                 NSLog(@"Big error: %@", [error description]);
             }
@@ -177,9 +181,7 @@
         [self tryWriteAgain:image];
     }else
     {
-        
         imagesaved ++;
-        
         //  self.progressView.progress +=  imagesaved/assets.count;
         self.progressView.progress = (float) imagesaved/numTotal ;
         self.progressNum.text = [NSString stringWithFormat:@"%d",imagesaved];
@@ -195,8 +197,11 @@
 }
 
 - (IBAction)takePhotoButton:(id)sender {
-    
-     self.progressNum.text = [NSString stringWithFormat:@"%d",0];
+    BOOL result = [self checkButtonAvailable];
+    if (!result) {
+        return;
+    }
+    self.progressNum.text = [NSString stringWithFormat:@"%d",0];
     self.progressView.progress = 0.0;
     //checks if device has a camera
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -221,8 +226,8 @@
 #pragma mark Image picker delegate methdos
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-     self.LoadingMask.hidden =  NO;
-     self.loadingView.hidden = NO;
+    // self.LoadingMask.hidden =  NO;
+    // self.loadingView.hidden = NO;
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     imagesaved = 0 ;
     numTotal = 1;
@@ -232,13 +237,6 @@
         if (error!=nil) {
             NSLog(@"Big error: %@", [error description]);
         }
-         else
-         {
-             self.LoadingMask.hidden =  YES;
-             self.loadingView.hidden = YES;
-
-
-         }
     }];
      [[picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
  
@@ -250,7 +248,7 @@
     self.progressView.progress = 0.0;
     self.progressNum.text = [NSString stringWithFormat:@"%d",0];
     self.numberTotal.text = [NSString stringWithFormat:@"%d",0];
-    self.LoadingMask.hidden =  YES;
+   // self.LoadingMask.hidden =  YES;
 
     [[picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
@@ -269,4 +267,22 @@
     
     return activityIndicatorView;
 }
+- (BOOL) checkButtonAvailable
+{
+    NSString *totalString = self.numberTotal.text ;
+    NSString *currentNumber = self.progressNum.text;
+    if ( totalString.intValue >  0 && currentNumber.intValue < totalString.intValue){
+        NSLog(@"test");
+        NSString *title = @"Alert";
+        NSString *message = @"Task is not finished yet, please wait...";
+        [[[UIAlertView alloc] initWithTitle:title
+                                    message:message
+                                   delegate:nil
+                          cancelButtonTitle:nil
+                          otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+        return false;
+    }
+    return TRUE;
+}
+
 @end
