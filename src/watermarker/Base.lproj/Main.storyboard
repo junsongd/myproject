@@ -27,28 +27,32 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="Doc-WB-2qe">
-                                <rect key="frame" x="57" y="310" width="206" height="4"/>
+                                <rect key="frame" x="57" y="362" width="206" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="100" maxX="0.0" maxY="-100"/>
                                 <color key="progressTintColor" red="0.10980392156862745" green="0.74901960784313726" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IKw-4u-jzA">
-                                <rect key="frame" x="129" y="332" width="23" height="21"/>
+                                <rect key="frame" x="129" y="374" width="23" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="100" maxX="0.0" maxY="-100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.10980392156862745" green="0.74901960784313726" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gRM-9g-Fam">
-                                <rect key="frame" x="155" y="332" width="14" height="21"/>
+                                <rect key="frame" x="155" y="374" width="14" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="100" maxX="0.0" maxY="-100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6zP-B4-Fgn">
-                                <rect key="frame" x="173" y="332" width="20" height="21"/>
+                                <rect key="frame" x="173" y="374" width="20" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="100" maxX="0.0" maxY="-100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.10980392156862745" green="0.74901960784313726" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <nil key="highlightedColor"/>
@@ -89,6 +93,24 @@
                                     <segue destination="mjL-kT-Jka" kind="push" id="TBZ-0B-qXX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gxq-Qw-hoN">
+                                <rect key="frame" x="-5" y="243" width="331" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="90" maxX="0.0" maxY="-90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Contact">
+                                    <color key="titleColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8kx-IK-XKX" kind="push" id="ZIp-74-4Nr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2G1-cT-8U8">
+                                <rect key="frame" x="16" y="245" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,6 +118,7 @@
                     <navigationItem key="navigationItem" id="9q9-D2-13I"/>
                     <connections>
                         <outlet property="configButton" destination="qnY-38-CKV" id="YzQ-55-U6X"/>
+                        <outlet property="contactButton" destination="Gxq-Qw-hoN" id="knp-2B-1CF"/>
                         <outlet property="numberTotal" destination="6zP-B4-Fgn" id="Rnd-TH-Q01"/>
                         <outlet property="progressNum" destination="IKw-4u-jzA" id="t5D-6N-e0R"/>
                         <outlet property="progressView" destination="Doc-WB-2qe" id="3P6-Rv-2Qe"/>
@@ -106,6 +129,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-222" y="-114"/>
+        </scene>
+        <!--Contact View Controller-->
+        <scene sceneID="C4F-yJ-Jfx">
+            <objects>
+                <viewController id="8kx-IK-XKX" customClass="ContactViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A5D-Hf-ubo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WSz-wL-8td">
+                                <rect key="frame" x="20" y="79" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="70" maxX="0.0" maxY="-70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeChat ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tv3-Ts-RLv">
+                                <rect key="frame" x="19" y="203" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="70" maxX="0.0" maxY="-70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    robin9257" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dsr-GQ-0E7">
+                                <rect key="frame" x="0.0" y="235" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="70" maxX="0.0" maxY="-70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    one_piece_djs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fPc-qU-F6w">
+                                <rect key="frame" x="0.0" y="274" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="70" maxX="0.0" maxY="-70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D4h-fN-pEu">
+                                <rect key="frame" x="-5" y="119" width="333" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="70" maxX="0.0" maxY="-70"/>
+                                <state key="normal" title="      Xuanzhaopeng@gmail.com">
+                                    <color key="titleColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="email1clicked:" destination="8kx-IK-XKX" eventType="touchUpInside" id="f8d-26-BrJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sc9-QI-Ush">
+                                <rect key="frame" x="-5" y="157" width="333" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="70" maxX="0.0" maxY="-70"/>
+                                <state key="normal" title="      junsong.dong@gmail.com">
+                                    <color key="titleColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="email2clicked:" destination="8kx-IK-XKX" eventType="touchUpInside" id="AJJ-MH-VCy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TVv-dh-kmT">
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="LqJ-iS-N8M"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8t-9T-Byi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147" y="231"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QlY-Jm-PaO">
@@ -151,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBC-KQ-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="345" y="-73"/>
+            <point key="canvasLocation" x="495" y="-209"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GyI-yT-Nu5">

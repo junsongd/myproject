@@ -19,5 +19,6 @@
 - (BOOL) checkButtonAvailable;
 - (IBAction)takePhotoButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *contactButton;
 
 @end

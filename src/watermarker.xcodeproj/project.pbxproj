@@ -30,6 +30,12 @@
 		2993E1301964810700444657 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E12D1964810700444657 /* Icon.png */; };
 		2993E1311964810700444657 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E12E1964810700444657 /* Icon@2x.png */; };
 		2993E133196483AF00444657 /* settings20.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E132196483AF00444657 /* settings20.png */; };
+		29957203196B2429007BBB30 /* message-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 29957202196B2429007BBB30 /* message-128.png */; };
+		29957205196B2473007BBB30 /* photo-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 29957204196B2473007BBB30 /* photo-128.png */; };
+		29957207196B24EB007BBB30 /* picture-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 29957206196B24EB007BBB30 /* picture-128.png */; };
+		2995720B196B29EF007BBB30 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29957209196B29EF007BBB30 /* ContactViewController.m */; };
+		2995720E196B389C007BBB30 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2995720D196B389C007BBB30 /* MessageUI.framework */; };
+		29957210196B44D1007BBB30 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2995720F196B44D1007BBB30 /* back.png */; };
 		299BA5D41968C748000D0AA0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 299BA5D11968C748000D0AA0 /* Default-568h@2x.png */; };
 		299BA5D51968C748000D0AA0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 299BA5D21968C748000D0AA0 /* Default.png */; };
 		299BA5D61968C748000D0AA0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 299BA5D31968C748000D0AA0 /* Default@2x.png */; };
@@ -79,6 +85,13 @@
 		2993E12D1964810700444657 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2993E12E1964810700444657 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2993E132196483AF00444657 /* settings20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings20.png; sourceTree = "<group>"; };
+		29957202196B2429007BBB30 /* message-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message-128.png"; sourceTree = "<group>"; };
+		29957204196B2473007BBB30 /* photo-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-128.png"; sourceTree = "<group>"; };
+		29957206196B24EB007BBB30 /* picture-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picture-128.png"; sourceTree = "<group>"; };
+		29957208196B29EF007BBB30 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		29957209196B29EF007BBB30 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		2995720D196B389C007BBB30 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2995720F196B44D1007BBB30 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		299BA5D11968C748000D0AA0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		299BA5D21968C748000D0AA0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		299BA5D31968C748000D0AA0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -91,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2995720E196B389C007BBB30 /* MessageUI.framework in Frameworks */,
 				2970F703195F535C00E895B1 /* CoreGraphics.framework in Frameworks */,
 				2970F705195F535C00E895B1 /* UIKit.framework in Frameworks */,
 				2970F701195F535C00E895B1 /* Foundation.framework in Frameworks */,
@@ -143,6 +157,7 @@
 		2970F6FF195F535C00E895B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2995720D196B389C007BBB30 /* MessageUI.framework */,
 				2970F700195F535C00E895B1 /* Foundation.framework */,
 				2970F702195F535C00E895B1 /* CoreGraphics.framework */,
 				2970F704195F535C00E895B1 /* UIKit.framework */,
@@ -167,6 +182,8 @@
 				2970F716195F535C00E895B1 /* ViewController.m */,
 				2970F718195F535C00E895B1 /* Images.xcassets */,
 				2970F707195F535C00E895B1 /* Supporting Files */,
+				29957208196B29EF007BBB30 /* ContactViewController.h */,
+				29957209196B29EF007BBB30 /* ContactViewController.m */,
 			);
 			path = watermarker;
 			sourceTree = "<group>";
@@ -203,6 +220,10 @@
 		2993E12B1964810700444657 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				2995720F196B44D1007BBB30 /* back.png */,
+				29957206196B24EB007BBB30 /* picture-128.png */,
+				29957204196B2473007BBB30 /* photo-128.png */,
+				29957202196B2429007BBB30 /* message-128.png */,
 				299BA5D11968C748000D0AA0 /* Default-568h@2x.png */,
 				299BA5D21968C748000D0AA0 /* Default.png */,
 				299BA5D31968C748000D0AA0 /* Default@2x.png */,
@@ -297,8 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2970F73C195F593500E895B1 /* qr.png in Resources */,
+				29957203196B2429007BBB30 /* message-128.png in Resources */,
+				29957210196B44D1007BBB30 /* back.png in Resources */,
 				29AE17F419688859001F177C /* file.png in Resources */,
 				2993E1311964810700444657 /* Icon@2x.png in Resources */,
+				29957205196B2473007BBB30 /* photo-128.png in Resources */,
 				29069C13196219EC00F62015 /* ZYQAssetPicker.Bundle in Resources */,
 				2970F719195F535C00E895B1 /* Images.xcassets in Resources */,
 				299BA5D41968C748000D0AA0 /* Default-568h@2x.png in Resources */,
@@ -306,6 +330,7 @@
 				299BA5D51968C748000D0AA0 /* Default.png in Resources */,
 				2970F70B195F535C00E895B1 /* InfoPlist.strings in Resources */,
 				2993E12F1964810700444657 /* 120x120.png in Resources */,
+				29957207196B24EB007BBB30 /* picture-128.png in Resources */,
 				2993E1301964810700444657 /* Icon.png in Resources */,
 				2970F714195F535C00E895B1 /* Main.storyboard in Resources */,
 				299BA5D61968C748000D0AA0 /* Default@2x.png in Resources */,
@@ -328,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2995720B196B29EF007BBB30 /* ContactViewController.m in Sources */,
 				2970F717195F535C00E895B1 /* ViewController.m in Sources */,
 				2970F711195F535C00E895B1 /* AppDelegate.m in Sources */,
 				2970F70D195F535C00E895B1 /* main.m in Sources */,

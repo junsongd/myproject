@@ -44,10 +44,14 @@
     self.configButton.hidden = TRUE;
     self.selectPhotoButton.layer.borderWidth = 1;
     self.takPhotoButton.layer.borderWidth = 1;
+    self.contactButton.layer.borderWidth = 1;
+
     UIColor *color_border = [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
 
     self.takPhotoButton.layer.borderColor = color_border.CGColor;
     self.selectPhotoButton.layer.borderColor = color_border.CGColor;
+    self.contactButton.layer.borderColor = color_border.CGColor;
+    
     [self setTitle:@"Water Marker"];
    
 
