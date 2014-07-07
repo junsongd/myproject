@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad
 {
-    
+    /**
      UIImage *buttonImage = [UIImage imageNamed:@"back"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:buttonImage forState:UIControlStateNormal];
@@ -24,7 +24,7 @@
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = customBarItem;
-    
+    **/
 
 }
 
