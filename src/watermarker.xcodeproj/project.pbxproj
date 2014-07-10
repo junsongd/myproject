@@ -26,6 +26,8 @@
 		2970F73A195F593500E895B1 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 2970F736195F593500E895B1 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		2970F73B195F593500E895B1 /* CreateWaterMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 2970F738195F593500E895B1 /* CreateWaterMark.m */; };
 		2970F73C195F593500E895B1 /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = 2970F739195F593500E895B1 /* qr.png */; };
+		298FA6B4196F22AE00EE0DB8 /* default_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 298FA6B3196F22AE00EE0DB8 /* default_bg.jpg */; };
+		298FA6B7196F25AD00EE0DB8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FA6B6196F25AD00EE0DB8 /* ConfigViewController.m */; };
 		2993E12F1964810700444657 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E12C1964810700444657 /* 120x120.png */; };
 		2993E1301964810700444657 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E12D1964810700444657 /* Icon.png */; };
 		2993E1311964810700444657 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993E12E1964810700444657 /* Icon@2x.png */; };
@@ -81,6 +83,9 @@
 		2970F737195F593500E895B1 /* CreateWaterMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWaterMark.h; sourceTree = "<group>"; };
 		2970F738195F593500E895B1 /* CreateWaterMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWaterMark.m; sourceTree = "<group>"; };
 		2970F739195F593500E895B1 /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
+		298FA6B3196F22AE00EE0DB8 /* default_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_bg.jpg; sourceTree = "<group>"; };
+		298FA6B5196F25AD00EE0DB8 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		298FA6B6196F25AD00EE0DB8 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		2993E12C1964810700444657 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
 		2993E12D1964810700444657 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2993E12E1964810700444657 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -184,6 +189,8 @@
 				2970F707195F535C00E895B1 /* Supporting Files */,
 				29957208196B29EF007BBB30 /* ContactViewController.h */,
 				29957209196B29EF007BBB30 /* ContactViewController.m */,
+				298FA6B5196F25AD00EE0DB8 /* ConfigViewController.h */,
+				298FA6B6196F25AD00EE0DB8 /* ConfigViewController.m */,
 			);
 			path = watermarker;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 		2993E12B1964810700444657 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				298FA6B3196F22AE00EE0DB8 /* default_bg.jpg */,
 				2995720F196B44D1007BBB30 /* back.png */,
 				29957206196B24EB007BBB30 /* picture-128.png */,
 				29957204196B2473007BBB30 /* photo-128.png */,
@@ -328,6 +336,7 @@
 				299BA5D41968C748000D0AA0 /* Default-568h@2x.png in Resources */,
 				29AE17F319688859001F177C /* camera.png in Resources */,
 				299BA5D51968C748000D0AA0 /* Default.png in Resources */,
+				298FA6B4196F22AE00EE0DB8 /* default_bg.jpg in Resources */,
 				2970F70B195F535C00E895B1 /* InfoPlist.strings in Resources */,
 				2993E12F1964810700444657 /* 120x120.png in Resources */,
 				29957207196B24EB007BBB30 /* picture-128.png in Resources */,
@@ -359,6 +368,7 @@
 				2970F70D195F535C00E895B1 /* main.m in Sources */,
 				29069C14196219EC00F62015 /* ZYQAssetPickerController.m in Sources */,
 				2970F73A195F593500E895B1 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
+				298FA6B7196F25AD00EE0DB8 /* ConfigViewController.m in Sources */,
 				2970F73B195F593500E895B1 /* CreateWaterMark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,4 +13,5 @@
 //-(UIImage *)imageWithTransImage:(UIImage *)useImage addtransparentImage:(UIImage *)transparentimg ;
 -(UIImage *)imageWithTransImage:(UIImage *)useImage addtransparentImage:(UIImage *)transparentimg withPosition:(NSString *) position withOpacity :(float)opacity;
 -(UIImage *)resizedImage:(UIImage *)image convertToSize:(CGSize)size;
+-(UIImage *)imageWithTransImage:(UIImage *)useImage addtransparentImage:(UIImage *)transparentimg withPositionX:(float) positionX withPositionY:(float) positionY withTransparentImageSize:(float) resize withOpacity :(float)opacity;
 @end

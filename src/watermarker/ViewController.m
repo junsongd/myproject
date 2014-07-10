@@ -41,7 +41,7 @@
     self.numberTotal.text = [NSString stringWithFormat:@"%d",0];
     imagesaved = 0;
      // self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
-    self.configButton.hidden = TRUE;
+    //self.configButton.hidden = TRUE;
     self.selectPhotoButton.layer.borderWidth = 1;
     self.takPhotoButton.layer.borderWidth = 1;
     self.contactButton.layer.borderWidth = 1;

@@ -38,6 +38,48 @@
     return destImage;
 }
 
+-(UIImage *)imageWithTransImage:(UIImage *)useImage addtransparentImage:(UIImage *)transparentimg withPositionX:(float) positionX withPositionY:(float) positionY withTransparentImageSize:(float) resize withOpacity :(float)opacity
+{
+    CGFloat original_height = useImage.size.height;
+    CGFloat original_width = useImage.size.width;
+    
+    CGFloat logo_height = transparentimg.size.height;
+    CGFloat logo_width = transparentimg.size.width;
+    
+    CGFloat logo_resized_height = 0;
+    CGFloat logo_resized_wight = 0;
+    
+    Float32 resize_percentage = resize;
+    
+    if (original_height >= original_width) {
+        logo_resized_wight = original_width * resize_percentage;
+        logo_resized_height = logo_resized_wight * logo_height / logo_width;
+    }else{
+        logo_resized_height = original_height * resize_percentage;
+        logo_resized_wight = logo_resized_height * logo_width / logo_height;
+    }
+    
+    Float32 padding_percentage_X = positionX;
+    Float32 padding_percentage_Y = positionY;
+    
+    CGFloat logo_padding_X = original_width * padding_percentage_X;
+    CGFloat logo_padding_Y = original_height * padding_percentage_Y;
+    
+    CGSize logo_resize = CGSizeMake(logo_resized_wight, logo_resized_height);
+    
+    transparentimg = [self resizedImage:transparentimg convertToSize:logo_resize];
+    
+    UIGraphicsBeginImageContext(useImage.size);
+    [useImage drawInRect:CGRectMake(0, 0, useImage.size.width, useImage.size.height)];
+    
+    [transparentimg drawInRect:CGRectMake(logo_padding_X, logo_padding_Y, transparentimg.size.width, transparentimg.size.height) blendMode:kCGBlendModeOverlay alpha:opacity];
+    
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resultingImage;
+}
+
+
 //加半透明的水印
 -(UIImage *)imageWithTransImage:(UIImage *)useImage addtransparentImage:(UIImage *)transparentimg withPosition:(NSString *) position withOpacity :(float)opacity
 {
