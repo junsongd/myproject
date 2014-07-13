@@ -255,7 +255,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="6ht-Rb-rox">
-                                                    <rect key="frame" x="116" y="7" width="154" height="31"/>
+                                                    <rect key="frame" x="106" y="7" width="154" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="minimumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                                     <color key="maximumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
@@ -265,7 +265,7 @@
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XCh-Do-THs">
-                                                    <rect key="frame" x="276" y="12" width="36" height="21"/>
+                                                    <rect key="frame" x="269" y="12" width="27" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
@@ -287,7 +287,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="LBM-t6-hov">
-                                                    <rect key="frame" x="116" y="7" width="154" height="31"/>
+                                                    <rect key="frame" x="107" y="7" width="154" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="minimumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                                     <color key="maximumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
@@ -297,7 +297,7 @@
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Jf-2G-T8b">
-                                                    <rect key="frame" x="276" y="11" width="36" height="21"/>
+                                                    <rect key="frame" x="265" y="11" width="36" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
@@ -319,7 +319,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="vcQ-cg-zCs">
-                                                    <rect key="frame" x="119" y="7" width="154" height="31"/>
+                                                    <rect key="frame" x="109" y="7" width="154" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="minimumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                                     <color key="maximumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
@@ -329,7 +329,7 @@
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YtP-Go-EW2">
-                                                    <rect key="frame" x="276" y="11" width="36" height="21"/>
+                                                    <rect key="frame" x="264" y="11" width="36" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
@@ -351,7 +351,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="k8f-EX-bLk">
-                                                    <rect key="frame" x="119" y="7" width="154" height="31"/>
+                                                    <rect key="frame" x="108" y="7" width="154" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="minimumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                                     <color key="maximumTrackTintColor" red="0.10980392160000001" green="0.74901960779999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
@@ -361,7 +361,7 @@
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="odl-uN-j70">
-                                                    <rect key="frame" x="276" y="11" width="36" height="21"/>
+                                                    <rect key="frame" x="264" y="11" width="36" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>

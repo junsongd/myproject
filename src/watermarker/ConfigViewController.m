@@ -16,6 +16,7 @@ UIImage *logoImage;
 
 - (void)viewDidLoad
 {
+    /**
     self.OpacityController.value = 0.3;
     self.PositionXController.value = 0.3;
     self.PositionYController.value = 0.3;
@@ -25,18 +26,42 @@ UIImage *logoImage;
     self.PositionXValue.text =[ NSString stringWithFormat:@"%1.0f%s", self.PositionXController.value * 100, "%"];
     self.PositionYValue.text =[ NSString stringWithFormat:@"%1.0f%s", self.PositionYController.value * 100, "%"];
     self.SizeValue.text = [ NSString stringWithFormat:@"%1.0f%s", self.SizeController.value * 100, "%"];
-    
+    **/
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
     singleTap.numberOfTapsRequired = 1;
     self.defaultImage.userInteractionEnabled = YES;
+        [self.defaultImage addGestureRecognizer:singleTap];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    //get value from NSUserDefaults
+    float opactiy = [prefs floatForKey:@"opactiy"];
+    float positionX = [prefs floatForKey:@"positionX"];
+    float positionY = [prefs floatForKey:@"positionY"];
+    float size  = [prefs floatForKey:@"size"];
+    NSData* imageData = [prefs objectForKey:@"logoImage"];
+    logoImage = [UIImage imageWithData:imageData];
     
-    [self.defaultImage addGestureRecognizer:singleTap];
+     // init value
+    self.OpacityController.value = opactiy;
+    self.PositionXController.value = positionX;
+    self.PositionYController.value = positionY;
+    self.SizeController.value = size;
+    // init controller
+    
+    self.OpacityValue.text = [NSString stringWithFormat:@"%.1f",opactiy];
+    self.PositionXValue.text =[ NSString stringWithFormat:@"%1.0f%s", positionX* 100, "%"];
+    self.PositionYValue.text =[ NSString stringWithFormat:@"%1.0f%s", positionY* 100, "%"];
+    self.SizeValue.text = [ NSString stringWithFormat:@"%1.0f%s", size * 100, "%"];
+    // update image
+    [self updateImage:logoImage];
+ 
     
 }
 
 - (IBAction)opacityChanged:(UISlider *)sender {
     self.OpacityValue.text = [NSString stringWithFormat:@"%.1f", [sender value]];
+    
     [self updateImage:logoImage];
+   
 }
 - (IBAction)PositionXChanged:(UISlider *)sender {
     float positionXPercentage = [sender value] * 100;
@@ -84,13 +109,38 @@ UIImage *logoImage;
 
 -(void)updateImage:(UIImage* )logoImage{
     
+   
     if (logoImage !=nil) {
+        [self.defaultImage setImage:nil];
+
         UIImage* defaultBg = [UIImage imageNamed:@"default_bg.jpg"];
         CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
         UIImage* resultImage =[imageCreator imageWithTransImage:defaultBg addtransparentImage:logoImage withPositionX:self.PositionXController.value withPositionY:self.PositionYController.value withTransparentImageSize:self.SizeController.value withOpacity:self.OpacityController.value ];
         
         [self.defaultImage setImage:resultImage];
+        
+        
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        //opacity
+        float opacity_save = self.OpacityController.value;
+        [prefs setFloat:opacity_save forKey:@"opactiy"];
+        
+        //posistionX
+        float posistionX_save = self.PositionXController.value;
+        [prefs setFloat:posistionX_save forKey:@"positionX"];
+        //posistionY
+        float posistionY_save = self.PositionYController.value;
+        [prefs setFloat:posistionY_save forKey:@"positionY"];
+        
+        //size
+        float size_save = self.SizeController.value;
+        [prefs setFloat:size_save forKey:@"size"];
+        
+        //logo image
+        
+        [prefs setObject:UIImagePNGRepresentation(logoImage)  forKey:@"logoImage"];
     }
+    
 }
 
 - (void)assetPickerControllerDidCancel:(ZYQAssetPickerController *)picker

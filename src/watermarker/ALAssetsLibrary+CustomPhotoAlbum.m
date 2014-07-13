@@ -31,9 +31,18 @@
     
     UIImage *tempImage=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
     
+    // get values from NSUserDefaults
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    //get value from NSUserDefaults
+    float opactiy = [prefs floatForKey:@"opactiy"];
+    float positionX = [prefs floatForKey:@"positionX"];
+    float positionY = [prefs floatForKey:@"positionY"];
+    float size  = [prefs floatForKey:@"size"];
+    NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"logoImage"];
+    UIImage* logoImage = [UIImage imageWithData:imageData];
+
     CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
-    UIImage* logoImage = [UIImage imageNamed:@"Icon@2x.png"];
-    UIImage* resultImage = [imageCreator imageWithTransImage:tempImage addtransparentImage:logoImage withPosition:(NSString*) @"topLeft" withOpacity :(float) 0.8 ];
+    UIImage* resultImage =[imageCreator imageWithTransImage:tempImage addtransparentImage:logoImage withPositionX:positionX withPositionY:positionY withTransparentImageSize:size withOpacity:opactiy ];
     
     //[assets removeObject:asset];
     NSLog(@"I shall now write image %@", resultImage);
@@ -72,10 +81,19 @@
 
 {
 
-     CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
-    UIImage* logoImage = [UIImage imageNamed:@"Icon@2x.png"];
-     UIImage* resultImage = [imageCreator imageWithTransImage:image addtransparentImage:logoImage withPosition:(NSString*) @"topLeft" withOpacity :(float) 0.5 ];
     
+    // get values from NSUserDefaults
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    //get value from NSUserDefaults
+    float opactiy = [prefs floatForKey:@"opactiy"];
+    float positionX = [prefs floatForKey:@"positionX"];
+    float positionY = [prefs floatForKey:@"positionY"];
+    float size  = [prefs floatForKey:@"size"];
+    NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"logoImage"];
+    UIImage* logoImage = [UIImage imageWithData:imageData];
+    
+    CreateWaterMark  *imageCreator = [[CreateWaterMark alloc] init];
+    UIImage* resultImage =[imageCreator imageWithTransImage:image addtransparentImage:logoImage withPositionX:positionX withPositionY:positionY withTransparentImageSize:size withOpacity:opactiy ];
          //write the image data to the assets library (camera roll)
     [self writeImageToSavedPhotosAlbum:resultImage.CGImage orientation:(ALAssetOrientation)resultImage.imageOrientation
                            completionBlock:^(NSURL* assetURL, NSError* error) {
