@@ -34,7 +34,7 @@ UIImage *logoImage;
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     //get value from NSUserDefaults
     float opactiy = [prefs floatForKey:@"opactiy"];
-    float positionX = [prefs floatForKey:@"positionX"];
+    float positionX = [self roundValue:[prefs floatForKey:@"positionX"]];
     float positionY = [prefs floatForKey:@"positionY"];
     float size  = [prefs floatForKey:@"size"];
     NSData* imageData = [prefs objectForKey:@"logoImage"];
@@ -53,29 +53,53 @@ UIImage *logoImage;
     self.SizeValue.text = [ NSString stringWithFormat:@"%1.0f%s", size * 100, "%"];
     // update image
     [self updateImage:logoImage];
- 
-    
+}
+
+- (float)roundValue:(float)floatValue{
+    float sb = round(floatValue * 100) /100;
+    return sb;
 }
 
 - (IBAction)opacityChanged:(UISlider *)sender {
     self.OpacityValue.text = [NSString stringWithFormat:@"%.1f", [sender value]];
     
-    [self updateImage:logoImage];
+    //[self updateImage:logoImage];
    
 }
+
+- (IBAction)opacityTouchUpInside:(UISlider *)sender {
+    [self updateImage:logoImage];
+}
+
 - (IBAction)PositionXChanged:(UISlider *)sender {
     float positionXPercentage = [sender value] * 100;
     self.PositionXValue.text = [NSString stringWithFormat:@"%1.0f%s", positionXPercentage, "%"];
+    //[self updateImage:logoImage];
+}
+
+- (IBAction)PositionXTouchUpInside:(UISlider *)sender {
+    //float positionXPercentage = [sender value] * 100;
+    //self.PositionXValue.text = [NSString stringWithFormat:@"%1.0f%s", positionXPercentage, "%"];
     [self updateImage:logoImage];
 }
+
 - (IBAction)PositionYChanged:(UISlider *)sender {
     float positionYPercentage = [sender value] * 100;
     self.PositionYValue.text = [NSString stringWithFormat:@"%1.0f%s", positionYPercentage, "%"];
+    //[self updateImage:logoImage];
+}
+
+- (IBAction)PositionYTouchUpInside:(UISlider *)sender {
     [self updateImage:logoImage];
 }
+
 - (IBAction)SizeChanged:(UISlider *)sender {
     float sizePercentage = [sender value] * 100;
     self.SizeValue.text = [NSString stringWithFormat:@"%1.0f%s", sizePercentage, "%"];
+    //[self updateImage:logoImage];
+}
+
+- (IBAction)SizeTouchUpInside:(UISlider *)sender {
     [self updateImage:logoImage];
 }
 

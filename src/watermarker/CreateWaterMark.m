@@ -72,7 +72,11 @@
     UIGraphicsBeginImageContext(useImage.size);
     [useImage drawInRect:CGRectMake(0, 0, useImage.size.width, useImage.size.height)];
     
-    [transparentimg drawInRect:CGRectMake(logo_padding_X, logo_padding_Y, transparentimg.size.width, transparentimg.size.height) blendMode:kCGBlendModeOverlay alpha:opacity];
+    if (original_height >= original_width) {
+        [transparentimg drawInRect:CGRectMake(logo_padding_X, logo_padding_Y, transparentimg.size.width, transparentimg.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
+    }else{
+        [transparentimg drawInRect:CGRectMake(logo_padding_Y, logo_padding_X, transparentimg.size.height ,transparentimg.size.width ) blendMode:kCGBlendModeNormal alpha:opacity];
+    }
     
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

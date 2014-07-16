@@ -19,11 +19,15 @@
 
 - (IBAction)opacityChanged:(UISlider *)sender;
 
+- (IBAction)opacityTouchUpInside:(UISlider *)sender;
+
 @property (weak, nonatomic) IBOutlet UISlider *PositionXController;
 
 @property (weak, nonatomic) IBOutlet UILabel *PositionXValue;
 
 - (IBAction)PositionXChanged:(UISlider *)sender;
+
+- (IBAction)PositionXTouchUpInside:(UISlider *)sender;
 
 @property (weak, nonatomic) IBOutlet UISlider *PositionYController;
 
@@ -31,11 +35,15 @@
 
 - (IBAction)PositionYChanged:(UISlider *)sender;
 
+- (IBAction)PositionYTouchUpInside:(UISlider *)sender;
+
 @property (weak, nonatomic) IBOutlet UISlider *SizeController;
 
 @property (weak, nonatomic) IBOutlet UILabel *SizeValue;
 
 - (IBAction)SizeChanged:(UISlider *)sender;
+
+- (IBAction)SizeTouchUpInside:(UISlider *)sender;
 
 -(void)updateImage:(UIImage* )logoImage;
 
