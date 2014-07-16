@@ -53,6 +53,12 @@
     self.contactButton.layer.borderColor = color_border.CGColor;
     
     [self setTitle:@"Water Marker"];
+    
+    UIColor *color_text = [UIColor colorWithRed:14.0/255.0 green:175.0/255.0 blue:82.0/255.0 alpha:1.0];
+    
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color_text, UITextAttributeTextColor,nil] forState:UIControlStateNormal];
+    //set back button arrow color
+    //self.navigationController.navigationBar.tintColor = color_text;
    
 
  }
