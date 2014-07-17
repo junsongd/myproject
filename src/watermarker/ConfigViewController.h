@@ -47,4 +47,11 @@
 
 -(void)updateImage:(UIImage* )logoImage;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *VersionSegmentControl;
+
+- (IBAction)VersionChanged:(UISegmentedControl *)sender;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *HorizontalDefaultImage;
+
 @end

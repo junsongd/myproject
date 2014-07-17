@@ -43,6 +43,7 @@
 		299BA5D61968C748000D0AA0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 299BA5D31968C748000D0AA0 /* Default@2x.png */; };
 		29AE17F319688859001F177C /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AE17F119688859001F177C /* camera.png */; };
 		29AE17F419688859001F177C /* file.png in Resources */ = {isa = PBXBuildFile; fileRef = 29AE17F219688859001F177C /* file.png */; };
+		29B0C2E9197880DB00C96A02 /* default_bg_h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C2E8197880DB00C96A02 /* default_bg_h.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		299BA5D31968C748000D0AA0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		29AE17F119688859001F177C /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		29AE17F219688859001F177C /* file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file.png; sourceTree = "<group>"; };
+		29B0C2E8197880DB00C96A02 /* default_bg_h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_bg_h.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 		2993E12B1964810700444657 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				29B0C2E8197880DB00C96A02 /* default_bg_h.jpg */,
 				298FA6B3196F22AE00EE0DB8 /* default_bg.jpg */,
 				2995720F196B44D1007BBB30 /* back.png */,
 				29957206196B24EB007BBB30 /* picture-128.png */,
@@ -332,6 +335,7 @@
 				2993E1311964810700444657 /* Icon@2x.png in Resources */,
 				29957205196B2473007BBB30 /* photo-128.png in Resources */,
 				29069C13196219EC00F62015 /* ZYQAssetPicker.Bundle in Resources */,
+				29B0C2E9197880DB00C96A02 /* default_bg_h.jpg in Resources */,
 				2970F719195F535C00E895B1 /* Images.xcassets in Resources */,
 				299BA5D41968C748000D0AA0 /* Default-568h@2x.png in Resources */,
 				29AE17F319688859001F177C /* camera.png in Resources */,

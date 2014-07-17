@@ -54,9 +54,24 @@
     if (original_height >= original_width) {
         logo_resized_wight = original_width * resize_percentage;
         logo_resized_height = logo_resized_wight * logo_height / logo_width;
-    }else{
+    }
+    else
+    {
         logo_resized_height = original_height * resize_percentage;
         logo_resized_wight = logo_resized_height * logo_width / logo_height;
+        
+        /*
+        if (logo_width ==logo_height) {
+            logo_resized_height = original_height * resize_percentage;
+            logo_resized_wight = logo_resized_height * logo_width / logo_height;
+        }
+        else
+        {
+            logo_resized_height = original_height * resize_percentage*3/4;
+            logo_resized_wight = logo_resized_height * logo_width / logo_height;
+        }
+         */
+      
     }
     
     Float32 padding_percentage_X = positionX;
@@ -72,11 +87,8 @@
     UIGraphicsBeginImageContext(useImage.size);
     [useImage drawInRect:CGRectMake(0, 0, useImage.size.width, useImage.size.height)];
     
-    if (original_height >= original_width) {
-        [transparentimg drawInRect:CGRectMake(logo_padding_X, logo_padding_Y, transparentimg.size.width, transparentimg.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
-    }else{
-        [transparentimg drawInRect:CGRectMake(logo_padding_Y, logo_padding_X, transparentimg.size.height ,transparentimg.size.width ) blendMode:kCGBlendModeNormal alpha:opacity];
-    }
+    [transparentimg drawInRect:CGRectMake(logo_padding_X , logo_padding_Y,transparentimg.size.width  ,transparentimg.size.height  ) blendMode:kCGBlendModeNormal alpha:opacity];
+    
     
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
