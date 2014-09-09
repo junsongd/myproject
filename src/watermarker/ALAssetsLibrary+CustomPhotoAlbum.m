@@ -34,10 +34,22 @@
     // get values from NSUserDefaults
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     //get value from NSUserDefaults
-    float opactiy = [prefs floatForKey:@"opactiy"];
-    float positionX = [prefs floatForKey:@"positionX"];
-    float positionY = [prefs floatForKey:@"positionY"];
-    float size  = [prefs floatForKey:@"size"];
+    float opactiy = 0;
+    float positionX = 0;
+    float positionY = 0;
+    float size  = 0;
+    if (tempImage.size.height >= tempImage.size.width) {
+        opactiy = [prefs floatForKey:@"opactiy"];
+        positionX = [prefs floatForKey:@"positionX"];
+        positionY = [prefs floatForKey:@"positionY"];
+        size  = [prefs floatForKey:@"size"];
+    }else{
+        opactiy = [prefs floatForKey:@"h_opactiy"];
+        positionX = [prefs floatForKey:@"h_positionX"];
+        positionY = [prefs floatForKey:@"h_positionY"];
+        size  = [prefs floatForKey:@"h_size"];
+    }
+    
     NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"logoImage"];
     UIImage* logoImage = [UIImage imageWithData:imageData];
 
@@ -80,15 +92,25 @@
 -(void)saveImage:(UIImage*)image toAlbum:(NSString*)albumName progressbar:(UIProgressView*)bar progressNumber:(UILabel*)number totalNumber:(int)total withCompletionBlock:(SaveImageCompletion)completionBlock
 
 {
-
-    
     // get values from NSUserDefaults
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     //get value from NSUserDefaults
-    float opactiy = [prefs floatForKey:@"opactiy"];
-    float positionX = [prefs floatForKey:@"positionX"];
-    float positionY = [prefs floatForKey:@"positionY"];
-    float size  = [prefs floatForKey:@"size"];
+    float opactiy = 0;
+    float positionX = 0;
+    float positionY = 0;
+    float size  = 0;
+    if (image.size.height >= image.size.width) {
+        opactiy = [prefs floatForKey:@"opactiy"];
+        positionX = [prefs floatForKey:@"positionX"];
+        positionY = [prefs floatForKey:@"positionY"];
+        size  = [prefs floatForKey:@"size"];
+    }else{
+        opactiy = [prefs floatForKey:@"h_opactiy"];
+        positionX = [prefs floatForKey:@"h_positionX"];
+        positionY = [prefs floatForKey:@"h_positionY"];
+        size  = [prefs floatForKey:@"h_size"];
+    }
+    
     NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"logoImage"];
     UIImage* logoImage = [UIImage imageWithData:imageData];
     
